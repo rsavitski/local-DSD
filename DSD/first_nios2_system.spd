@@ -13,6 +13,10 @@
    type="SYSTEM_VERILOG"
    library="width_adapter" />
  <file
+   path="first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv"
+   type="SYSTEM_VERILOG"
+   library="width_adapter" />
+ <file
    path="first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
    library="rsp_xbar_mux_001" />
@@ -62,6 +66,10 @@
    library="rst_controller" />
  <file
    path="first_nios2_system/simulation/submodules/altera_merlin_burst_adapter.sv"
+   type="SYSTEM_VERILOG"
+   library="burst_adapter" />
+ <file
+   path="first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv"
    type="SYSTEM_VERILOG"
    library="burst_adapter" />
  <file
@@ -133,11 +141,11 @@
    type="VERILOG"
    library="fp_cust_insn_0" />
  <file
-   path="first_nios2_system/simulation/submodules/first_nios2_system_altpll_0.vo"
-   type="VERILOG"
-   library="altpll_0" />
- <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_sdram_0.v"
+   type="VERILOG"
+   library="sdram_0" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_sdram_0_test_component.v"
    type="VERILOG"
    library="sdram_0" />
  <file
@@ -206,6 +214,10 @@
    library="cpu" />
  <file
    path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v"
+   type="VERILOG"
+   library="cpu" />
+ <file
+   path="first_nios2_system/simulation/submodules/first_nios2_system_cpu_mult_cell.v"
    type="VERILOG"
    library="cpu" />
  <file

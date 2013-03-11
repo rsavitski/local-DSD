@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.0 178 win32 2013.02.23.21:36:49
+# ACDS 12.1 177 win32 2013.03.11.15:48:47
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -57,15 +57,16 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEFINED_ELAB_OPTIONS \
-  -v C:/altera/quartus/eda/sim_lib/altera_primitives.v \
-  -v C:/altera/quartus/eda/sim_lib/220model.v \
-  -v C:/altera/quartus/eda/sim_lib/sgate.v \
-  -v C:/altera/quartus/eda/sim_lib/altera_mf.v \
-  C:/altera/quartus/eda/sim_lib/altera_lnsim.sv \
-  -v C:/altera/quartus/eda/sim_lib/cycloneiii_atoms.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/altera_primitives.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/220model.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/sgate.v \
+  -v c:/altera/12.1/quartus/eda/sim_lib/altera_mf.v \
+  c:/altera/12.1/quartus/eda/sim_lib/altera_lnsim.sv \
+  -v c:/altera/12.1/quartus/eda/sim_lib/cycloneiii_atoms.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_irq_mapper.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_width_adapter.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_address_alignment.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv \
@@ -93,8 +94,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v \
-  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_altpll_0.vo \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sysid.vo \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sys_clk_timer.v \
@@ -103,10 +104,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_oci_test_bench.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_test_bench.v \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv \
-  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_conduit_bfm.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_reset_source.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_clock_source.sv \

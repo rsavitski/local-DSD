@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_reset_controller
+I6lA71HIa<HLz222HL^25`0
+V:mR1fj3Rf>NGziDN_:U030
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+Z2 w1363016926
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v
+L0 28
+Z3 OV;L;10.1b;51
+r1
+31
+Z4 o-work rst_controller -O0
+!i10b 1
+!s100 `T=A9VB8B=YoG73fjTIF42
+!s85 0
+!s108 1363018347.885000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+!s101 -O0
+valtera_reset_synchronizer
+!i10b 1
+!s100 n6<2>U[ceXELY47;0Sn;>3
+IMZWhz7[d<e7ZZ:XcTa3Dc3
+V3CjoOZCIEdzCJgPn8]D7`2
+R1
+R2
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v
+L0 24
+R3
+r1
+!s85 0
+31
+!s108 1363018347.935000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!s101 -O0
+R4

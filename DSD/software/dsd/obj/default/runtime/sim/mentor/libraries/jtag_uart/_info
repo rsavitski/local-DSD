@@ -1,0 +1,138 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system_jtag_uart
+!i10b 1
+!s100 5VNIn<U=W8B?i4:FQa4C30
+I0<_hWK5;Q;Mee^V0l@c@;2
+VA48fH>Q>mBh>oXI@fz<VM1
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+Z2 w1363016906
+Z3 8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v
+Z4 FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v
+L0 540
+Z5 OV;L;10.1b;51
+r1
+!s85 0
+31
+Z6 !s108 1363018349.987000
+Z7 !s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v|
+Z8 !s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_jtag_uart.v|-work|jtag_uart|
+!s101 -O0
+Z9 o-work jtag_uart -O0
+vfirst_nios2_system_jtag_uart_drom_module
+!i10b 1
+!s100 ?YYWVdo[7^R`nLNc4[K1B1
+IoVjR>1]90GX3mHR2Ob>EQ1
+VTbK28cLJO9`kFiEFn<cH32
+R1
+R2
+R3
+R4
+L0 211
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+vfirst_nios2_system_jtag_uart_log_module
+!i10b 1
+!s100 WSLg?5E<G5>c;_L@Z1a`g0
+I=mLMo>c[@]`Pbb<0ic>W70
+Vn?lmVJ24<hdLO:2bbZK@J1
+R1
+R2
+R3
+R4
+L0 21
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+vfirst_nios2_system_jtag_uart_scfifo_r
+!i10b 1
+!s100 ONV0LfAZUd51R9UR6>UB13
+IBfiGS>E=KJ?Ni?ocdRJhO3
+VYh7D5NnYKR2zXig5WMjU_0
+R1
+R2
+R3
+R4
+L0 453
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+vfirst_nios2_system_jtag_uart_scfifo_w
+!i10b 1
+!s100 8Zc^?P;]D?:[h4BocVDSZ0
+I9RmOnDg`E:hgXfJ?Cf`1=2
+Ve]7E13T0@M8V9MQdFYonz0
+R1
+R2
+R3
+R4
+L0 126
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+vfirst_nios2_system_jtag_uart_sim_scfifo_r
+!i10b 1
+!s100 8l_jHC[4;9OjVn0H^c@f`2
+IO@5^n`FflX?_WVe6VPX[[3
+V37g^_FiUgKTU<WMKmFn>U3
+R1
+R2
+R3
+R4
+L0 365
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+vfirst_nios2_system_jtag_uart_sim_scfifo_w
+!i10b 1
+!s100 Hc^M@JEoo@H[^>l=lJ8bT3
+IFbLhN6DbK0[BL=Km779<=0
+VC4K_ZTifb7n1fWZd]eYfm2
+R1
+R2
+R3
+R4
+L0 68
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9

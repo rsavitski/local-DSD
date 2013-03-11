@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfp_cust_insn
+!i10b 1
+!s100 :<l9@DnTA@DGH@4G^3j563
+IjCffP]RAN]jEPe@P4_0Vz3
+VeMHh1VVG<MEIOomZj[I<P0
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1363016926
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v
+L0 2
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1363018349.628000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v|
+!s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v|-work|fp_cust_insn_0|
+!s101 -O0
+o-work fp_cust_insn_0 -O0

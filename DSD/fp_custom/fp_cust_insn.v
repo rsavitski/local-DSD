@@ -38,7 +38,7 @@ module fp_cust_insn (
 	assign add_sub_select = (n == add_opcode) ? 1'b1 : 1'b0;
 	
 	// add and sub results duplicated on both wires
-	assign result_bus[sub_opcode] = result_bus[add_opcode];
+	assign result_bus[sub_opcode] = result_bus[add_opcode];	 
 	
 	// multiplex correct result by operation select
 	assign result = result_bus[n];
@@ -51,19 +51,24 @@ module fp_cust_insn (
 	// downcounter for asserting done when data is valid
 	always @ (posedge clk)
 	begin
-		if (clk_en)
+		if (reset)
+			delay_cnt <= -1;
+		else
 		begin
-			if (start)
+			if (clk_en)
 			begin
-				case(n)
-				add_opcode: delay_cnt <= fp_add_latency - 1;
-				sub_opcode: delay_cnt <= fp_sub_latency - 1;
-				mul_opcode: delay_cnt <= fp_mul_latency - 1;
-				default: delay_cnt <= 0;
-				endcase
+				if (start)
+				begin
+					case(n)
+					add_opcode: delay_cnt <= fp_add_latency - 1;
+					sub_opcode: delay_cnt <= fp_sub_latency - 1;
+					mul_opcode: delay_cnt <= fp_mul_latency - 1;
+					default: delay_cnt <= 0;
+					endcase
+				end
+				else
+					delay_cnt <= delay_cnt - 1; 
 			end
-			else
-				delay_cnt <= delay_cnt - 1; 
 		end
 	end
 

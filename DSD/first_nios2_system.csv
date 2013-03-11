@@ -1,12 +1,12 @@
-# system info first_nios2_system on 2013.02.23.21:35:20
+# system info first_nios2_system on 2013.03.11.15:47:43
 system_info:
 name,value
-DEVICE,
+DEVICE,EP3C16F484C6
 DEVICE_FAMILY,Cyclone III
-GENERATION_ID,1361655254
+GENERATION_ID,1363016819
 #
 #
-# Files generated for first_nios2_system on 2013.02.23.21:35:20
+# Files generated for first_nios2_system on 2013.03.11.15:47:43
 files:
 filepath,kind,attributes,module,is_top
 first_nios2_system/simulation/first_nios2_system.v,VERILOG,,first_nios2_system,true
@@ -20,6 +20,7 @@ first_nios2_system/simulation/submodules/first_nios2_system_cpu_ic_tag_ram.mif,M
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_sysclk.v,VERILOG,,first_nios2_system_cpu,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_tck.v,VERILOG,,first_nios2_system_cpu,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_jtag_debug_module_wrapper.v,VERILOG,,first_nios2_system_cpu,false
+first_nios2_system/simulation/submodules/first_nios2_system_cpu_mult_cell.v,VERILOG,,first_nios2_system_cpu,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.dat,DAT,,first_nios2_system_cpu,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.hex,HEX,,first_nios2_system_cpu,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.mif,MIF,,first_nios2_system_cpu,false
@@ -39,7 +40,7 @@ first_nios2_system/simulation/submodules/first_nios2_system_sys_clk_timer.v,VERI
 first_nios2_system/simulation/submodules/first_nios2_system_sysid.vo,VERILOG,,first_nios2_system_sysid,false
 first_nios2_system/simulation/submodules/first_nios2_system_led_pio.v,VERILOG,,first_nios2_system_led_pio,false
 first_nios2_system/simulation/submodules/first_nios2_system_sdram_0.v,VERILOG,,first_nios2_system_sdram_0,false
-first_nios2_system/simulation/submodules/first_nios2_system_altpll_0.vo,VERILOG,,first_nios2_system_altpll_0,false
+first_nios2_system/simulation/submodules/first_nios2_system_sdram_0_test_component.v,VERILOG,,first_nios2_system_sdram_0,false
 first_nios2_system/simulation/submodules/fp_cust_insn.v,VERILOG,,fp_cust_insn,false
 first_nios2_system/simulation/submodules/altera_customins_master_translator.v,VERILOG,,altera_customins_master_translator,false
 first_nios2_system/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv,SYSTEM_VERILOG,,first_nios2_system_cpu_custom_instruction_master_multi_xconnect,false
@@ -58,6 +59,7 @@ first_nios2_system/simulation/submodules/first_nios2_system_id_router_002.sv,SYS
 first_nios2_system/simulation/submodules/altera_merlin_traffic_limiter.sv,SYSTEM_VERILOG,,altera_merlin_traffic_limiter,false
 first_nios2_system/simulation/submodules/altera_avalon_st_pipeline_base.v,VERILOG,,altera_merlin_traffic_limiter,false
 first_nios2_system/simulation/submodules/altera_merlin_burst_adapter.sv,SYSTEM_VERILOG,,altera_merlin_burst_adapter,false
+first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv,SYSTEM_VERILOG,,altera_merlin_burst_adapter,false
 first_nios2_system/simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
 first_nios2_system/simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
 first_nios2_system/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv,SYSTEM_VERILOG,,first_nios2_system_cmd_xbar_demux,false
@@ -72,6 +74,7 @@ first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv,SYSTEM_VERI
 first_nios2_system/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv,SYSTEM_VERILOG,,first_nios2_system_rsp_xbar_mux_001,false
 first_nios2_system/simulation/submodules/altera_merlin_width_adapter.sv,SYSTEM_VERILOG,,altera_merlin_width_adapter,false
 first_nios2_system/simulation/submodules/altera_merlin_burst_uncompressor.sv,SYSTEM_VERILOG,,altera_merlin_width_adapter,false
+first_nios2_system/simulation/submodules/altera_merlin_address_alignment.sv,SYSTEM_VERILOG,,altera_merlin_width_adapter,false
 first_nios2_system/simulation/submodules/first_nios2_system_irq_mapper.sv,SYSTEM_VERILOG,,first_nios2_system_irq_mapper,false
 #
 # Map from instance-path to kind of module
@@ -83,7 +86,6 @@ first_nios2_system.sys_clk_timer,first_nios2_system_sys_clk_timer
 first_nios2_system.sysid,first_nios2_system_sysid
 first_nios2_system.led_pio,first_nios2_system_led_pio
 first_nios2_system.sdram_0,first_nios2_system_sdram_0
-first_nios2_system.altpll_0,first_nios2_system_altpll_0
 first_nios2_system.fp_cust_insn_0,fp_cust_insn
 first_nios2_system.cpu_custom_instruction_master_translator,altera_customins_master_translator
 first_nios2_system.cpu_custom_instruction_master_multi_xconnect,first_nios2_system_cpu_custom_instruction_master_multi_xconnect

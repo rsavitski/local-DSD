@@ -230,6 +230,7 @@
 <definedSymbol symbol="ALT_NO_C_PLUS_PLUS=1"/>
 <definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
 <definedSymbol symbol="ALT_SINGLE_THREADED=1"/>
+<definedSymbol symbol="ALT_SIM_OPTIMIZE=1"/>
 </collector>
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1473941975;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1473941975.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.546291037;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.23925923">
@@ -450,6 +451,7 @@
 <definedSymbol symbol="ALT_NO_C_PLUS_PLUS=1"/>
 <definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
 <definedSymbol symbol="ALT_SINGLE_THREADED=1"/>
+<definedSymbol symbol="ALT_SIM_OPTIMIZE=1"/>
 </collector>
 </instance>
 </scannerInfo>

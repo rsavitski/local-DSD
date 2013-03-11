@@ -12,9 +12,9 @@
 
 
 
-// $Id: //acds/rel/12.0/ip/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator.sv#1 $
+// $Id: //acds/rel/12.1/ip/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator.sv#1 $
 // $Revision: #1 $
-// $Date: 2012/02/13 $
+// $Date: 2012/08/12 $
 // $Author: swbranch $
 
 // -------------------------------------

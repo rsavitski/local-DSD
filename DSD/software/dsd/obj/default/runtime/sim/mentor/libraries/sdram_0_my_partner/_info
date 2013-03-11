@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_sdram_partner_module
+!i10b 1
+!s100 @]9W=lV@TOmV4ed3]J9:R0
+IliiBH4`kk6LAao6[JEQ@A0
+VLAMB16b8JFoBHbW098nnP0
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1363016885
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v
+L0 21
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1363018351.204000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v|
+!s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v|-work|sdram_0_my_partner|
+!s101 -O0
+o-work sdram_0_my_partner -O0

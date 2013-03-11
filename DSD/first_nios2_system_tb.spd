@@ -13,6 +13,10 @@
    type="SYSTEM_VERILOG"
    library="width_adapter" />
  <file
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_address_alignment.sv"
+   type="SYSTEM_VERILOG"
+   library="width_adapter" />
+ <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
    library="rsp_xbar_mux_001" />
@@ -62,6 +66,10 @@
    library="rst_controller" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv"
+   type="SYSTEM_VERILOG"
+   library="burst_adapter" />
+ <file
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_address_alignment.sv"
    type="SYSTEM_VERILOG"
    library="burst_adapter" />
  <file
@@ -133,11 +141,11 @@
    type="VERILOG"
    library="fp_cust_insn_0" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_altpll_0.vo"
-   type="VERILOG"
-   library="altpll_0" />
- <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v"
+   type="VERILOG"
+   library="sdram_0" />
+ <file
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v"
    type="VERILOG"
    library="sdram_0" />
  <file
@@ -209,6 +217,10 @@
    type="VERILOG"
    library="cpu" />
  <file
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_mult_cell.v"
+   type="VERILOG"
+   library="cpu" />
+ <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_ociram_default_contents.dat"
    type="DAT"
    library="cpu" />
@@ -253,13 +265,9 @@
    type="VERILOG"
    library="cpu" />
  <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"
-   type="SYSTEM_VERILOG"
-   library="first_nios2_system_inst_sdram_0_wire_bfm" />
- <file
-   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_conduit_bfm_0002.sv"
-   type="SYSTEM_VERILOG"
-   library="first_nios2_system_inst_sdram_0_wire_bfm" />
+   path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_sdram_partner_module.v"
+   type="VERILOG"
+   library="sdram_0_my_partner" />
  <file
    path="first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv"
    type="SYSTEM_VERILOG"
@@ -293,4 +301,7 @@
    type="VERILOG" />
  <topLevel name="first_nios2_system_tb" />
  <deviceFamily name="cycloneiii" />
+ <modelMap
+   controllerPath="first_nios2_system_tb.first_nios2_system_inst.sdram_0"
+   modelPath="first_nios2_system_tb.sdram_0_my_partner" />
 </simPackage>

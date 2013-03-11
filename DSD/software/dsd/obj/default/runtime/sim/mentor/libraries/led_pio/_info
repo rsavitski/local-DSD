@@ -1,0 +1,24 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+vfirst_nios2_system_led_pio
+!i10b 1
+!s100 SehAoQ`H;I3CiMaR>COX=0
+I9G1N2UmMhDWJjI@gYTeg73
+VHV`]j51n4O^Qh<S7j5dSd3
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1363016919
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v
+L0 21
+OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1363018349.831000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v|
+!s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_led_pio.v|-work|led_pio|
+!s101 -O0
+o-work led_pio -O0

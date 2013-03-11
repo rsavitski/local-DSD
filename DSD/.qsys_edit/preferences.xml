@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="143" />
+   <connections preferredWidth="127" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -19,7 +19,7 @@
  <hdlexample language="VERILOG" />
  <generation
    block_symbol_file="0"
-   simulation="NONE"
-   testbench_system="NONE"
+   simulation="VERILOG"
+   testbench_system="STANDARD"
    testbench_simulation="VERILOG" />
 </preferences>

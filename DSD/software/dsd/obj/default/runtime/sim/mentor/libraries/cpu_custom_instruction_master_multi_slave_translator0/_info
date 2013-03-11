@@ -1,0 +1,27 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+valtera_customins_slave_translator
+DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 H_]HT14zI:bNkeSN?:FMI2
+IRT[i`k4Wz`e0[6:PNkGTE1
+VaJfY[bFE[l>`AaXcMkiIX3
+!s105 altera_customins_slave_translator_sv_unit
+S1
+Z1 dC:\local_dsd\fp_cust_simple\DSD\software\dsd\obj\default\runtime\sim\mentor
+w1363016926
+8C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv
+FC:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv
+L0 23
+Z2 OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1363018349.379000
+!s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv|
+!s90 -reportprogress|300|-sv|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv|-work|cpu_custom_instruction_master_multi_slave_translator0|
+!s101 -O0
+o-sv -work cpu_custom_instruction_master_multi_slave_translator0 -O0

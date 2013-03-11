@@ -29,7 +29,7 @@
 #define MXSIZE 3
 
 float **tempmat;
-/*
+
 int alt_main()
 {
 	float a = 2.5;
@@ -37,8 +37,12 @@ int alt_main()
 	float c = 0;
 	c = FP_ADD_CI(a,b);
 
+	c = FP_SUB_CI(a,b);
+
+	c = FP_MUL_CI(a,b);
+
 	return 0;
-}*/
+}
 /*
 void rswap (float **tempmat, size_t i, size_t j){
 	float *tmp = tempmat[i];
@@ -95,26 +99,26 @@ int main()
 	float b = 0.7;
 	float c = 0;
 
-	char buf[10];
+	//char buf[10];
 
 
-	printf("Hello from Nios II!\n");
+	//printf("Hello from Nios II!\n");
 while(1)
 {
 		c = FP_ADD_CI(a,b);
 		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
-		gcvt(c, 10, buf);
-		alt_putstr("a+b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+		//gcvt(c, 10, buf);
+		//alt_putstr("a+b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
 
 		c = FP_SUB_CI(a,b);
 		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
-		gcvt(c, 10, buf);
-		alt_putstr("a-b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+		//gcvt(c, 10, buf);
+		//alt_putstr("a-b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
 
 		c = FP_MUL_CI(a,b);
 		//IOWR_ALTERA_AVALON_PIO_DATA(LED_PIO_BASE, c);
-		gcvt(c, 10, buf);
-		alt_putstr("a*b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
+		//gcvt(c, 10, buf);
+		//alt_putstr("a*b result: "); alt_putstr(buf); alt_putstr(" harblbarbls \n");
 
 		a += 1;
 		b += 1;
