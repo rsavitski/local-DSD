@@ -1,0 +1,701 @@
+Info: Starting: Create simulation model
+Info: ip-generate --project-directory=H:/DSD_DE0/DSD/ --output-directory=H:/DSD_DE0/DSD/first_nios2_system/simulation/ --file-set=SIM_VERILOG --report-file=sopcinfo:H:/DSD_DE0/DSD/first_nios2_system.sopcinfo --report-file=html:H:/DSD_DE0/DSD/first_nios2_system.html --report-file=sip:H:/DSD_DE0/DSD/first_nios2_system/simulation/first_nios2_system.sip --report-file=csv:H:/DSD_DE0/DSD/first_nios2_system.csv --report-file=spd:H:/DSD_DE0/DSD/first_nios2_system.spd --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=H:/DSD_DE0/DSD/first_nios2_system.qsys
+Progress: Loading DSD/first_nios2_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 12.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 12.0]
+Progress: Parameterizing module onchip_mem
+Progress: Adding cpu [altera_nios2_qsys 12.0]
+Progress: Parameterizing module cpu
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 12.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sys_clk_timer [altera_avalon_timer 12.0]
+Progress: Parameterizing module sys_clk_timer
+Progress: Adding sysid [altera_avalon_sysid_qsys 12.0]
+Progress: Parameterizing module sysid
+Progress: Adding led_pio [altera_avalon_pio 12.0]
+Progress: Parameterizing module led_pio
+Progress: Adding sdram_0 [altera_avalon_new_sdram_controller 12.0]
+Progress: Parameterizing module sdram_0
+Progress: Adding altpll_0 [altpll 12.0]
+Progress: Parameterizing module altpll_0
+Progress: Adding fp_cust_insn_0 [fp_cust_insn 1.0]
+Progress: Parameterizing module fp_cust_insn_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: first_nios2_system.sysid: System ID will no longer be automatically assigned.
+Info: first_nios2_system.sysid: Time stamp will be automatically updated when this component is generated.
+Warning: first_nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: first_nios2_system.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: first_nios2_system: Generating first_nios2_system "first_nios2_system" for SIM_VERILOG
+Info: pipeline_bridge_swap_transform: After transform: 9 modules, 25 connections
+Info: merlin_custom_instruction_transform: After transform: 12 modules, 28 connections
+Info: merlin_translator_transform: After transform: 20 modules, 52 connections
+Info: merlin_domain_transform: After transform: 35 modules, 130 connections
+Info: merlin_router_transform: After transform: 43 modules, 154 connections
+Info: merlin_traffic_limiter_transform: After transform: 44 modules, 158 connections
+Info: merlin_burst_transform: After transform: 45 modules, 161 connections
+Info: reset_adaptation_transform: After transform: 46 modules, 163 connections
+Info: merlin_network_to_switch_transform: After transform: 61 modules, 195 connections
+Info: merlin_width_transform: After transform: 63 modules, 201 connections
+Info: limiter_update_transform: After transform: 63 modules, 202 connections
+Info: merlin_interrupt_mapper_transform: After transform: 64 modules, 205 connections
+Warning: system: "No matching role found for cpu_custom_instruction_master_translator:ci_slave:ci_slave_result (result)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
+Info: cpu: Starting RTL generation for module 'first_nios2_system_cpu'
+Info: cpu:   Generation command is [exec C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I C:/altera/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=first_nios2_system_cpu --dir=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0429_cpu_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0429_cpu_gen//first_nios2_system_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0429_cpu_gen/    --bogus  ]
+Info: cpu: # 2013.02.23 19:44:55 (*) Starting Nios II generation
+Info: cpu: # 2013.02.23 19:44:55 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2013.02.23 19:44:55 (*)   Couldn't query license setup in Quartus directory C:/altera/quartus
+Info: cpu: # 2013.02.23 19:44:55 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2013.02.23 19:44:55 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2013.02.23 19:44:55 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2013.02.23 19:44:55 (*)   Creating all objects for CPU
+Info: cpu: # 2013.02.23 19:44:56 (*)     Pipeline frontend
+Info: cpu: # 2013.02.23 19:44:58 (*)   Creating 'C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0429_cpu_gen//first_nios2_system_cpu.do'
+Info: cpu: # 2013.02.23 19:44:58 (*)   Generating RTL from CPU objects
+Info: cpu: # 2013.02.23 19:45:00 (*)   Creating encrypted RTL
+Info: cpu: # 2013.02.23 19:45:01 (*)   Creating IP functional simulation model
+Info: cpu: # 2013.02.23 19:45:09 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'first_nios2_system_cpu'
+Info: cpu: "first_nios2_system" instantiated altera_nios2_qsys "cpu"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0430_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0430_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0430_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0430_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0430_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:45:21 (*) Success: sopc_builder finished.
+Info: jtag_uart: "first_nios2_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0431_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0431_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0431_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0431_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0431_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:45:31 (*) Success: sopc_builder finished.
+Info: sys_clk_timer: "first_nios2_system" instantiated altera_avalon_timer "sys_clk_timer"
+Info: sysid: Generating Verilog simulation model
+Info: sysid: Generated simulation model first_nios2_system_sysid.vo
+Info: sysid: "first_nios2_system" instantiated altera_avalon_sysid_qsys "sysid"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0435_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0435_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0435_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0435_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0435_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:45:43 (*) Success: sopc_builder finished.
+Info: led_pio: "first_nios2_system" instantiated altera_avalon_pio "led_pio"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0436_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0436_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0436_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0436_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0436_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+.
+# 2013.02.23 19:45:55 (*) Running Test Generator Program for first_nios2_system_sdram_0
+# 2013.02.23 19:45:56 (*) Success: sopc_builder finished.
+Info: sdram_0: "first_nios2_system" instantiated altera_avalon_new_sdram_controller "sdram_0"
+Info: altpll_0: Generating Verilog simulation model
+Info: altpll_0: Generated simulation model first_nios2_system_altpll_0.vo
+Info: altpll_0: "first_nios2_system" instantiated altpll "altpll_0"
+Info: fp_cust_insn_0: "first_nios2_system" instantiated fp_cust_insn "fp_cust_insn_0"
+Info: cpu_custom_instruction_master_translator: "first_nios2_system" instantiated altera_customins_master_translator "cpu_custom_instruction_master_translator"
+Info: cpu_custom_instruction_master_multi_xconnect: "first_nios2_system" instantiated altera_customins_xconnect "cpu_custom_instruction_master_multi_xconnect"
+Info: cpu_custom_instruction_master_multi_slave_translator0: "first_nios2_system" instantiated altera_customins_slave_translator "cpu_custom_instruction_master_multi_slave_translator0"
+Info: cpu_instruction_master_translator: "first_nios2_system" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info: cpu_jtag_debug_module_translator: "first_nios2_system" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info: cpu_instruction_master_translator_avalon_universal_master_0_agent: "first_nios2_system" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "first_nios2_system" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "first_nios2_system" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "first_nios2_system" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "first_nios2_system" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "first_nios2_system" instantiated altera_merlin_router "id_router"
+Info: id_router_001: "first_nios2_system" instantiated altera_merlin_router "id_router_001"
+Info: id_router_002: "first_nios2_system" instantiated altera_merlin_router "id_router_002"
+Info: limiter: "first_nios2_system" instantiated altera_merlin_traffic_limiter "limiter"
+Info: burst_adapter: "first_nios2_system" instantiated altera_merlin_burst_adapter "burst_adapter"
+Info: rst_controller: "first_nios2_system" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "first_nios2_system" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "first_nios2_system" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "first_nios2_system" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "first_nios2_system" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_002: "first_nios2_system" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_002"
+Info: rsp_xbar_mux: "first_nios2_system" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "first_nios2_system" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: width_adapter: "first_nios2_system" instantiated altera_merlin_width_adapter "width_adapter"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/simulation/submodules/altera_merlin_burst_uncompressor.sv
+Info: irq_mapper: "first_nios2_system" instantiated altera_irq_mapper "irq_mapper"
+Info: first_nios2_system: Done first_nios2_system" with 34 modules, 94 files, 1798065 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=H:/DSD_DE0/DSD/first_nios2_system.spd --output-directory=H:/DSD_DE0/DSD/first_nios2_system/simulation/
+Info: Doing: ip-make-simscript --spd=H:/DSD_DE0/DSD/first_nios2_system.spd --output-directory=H:/DSD_DE0/DSD/first_nios2_system/simulation/
+Info: Generating the following file(s) for MODELSIM simulator in H:/DSD_DE0/DSD/first_nios2_system/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in H:/DSD_DE0/DSD/first_nios2_system/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in H:/DSD_DE0/DSD/first_nios2_system/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in H:/DSD_DE0/DSD/first_nios2_system/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	33 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERAPRO simulator in H:/DSD_DE0/DSD/first_nios2_system/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create testbench Qsys system
+Info: H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system.ipx
+Info: ip-generate --project-directory=H:/DSD_DE0/DSD/ --output-directory=H:/DSD_DE0/DSD/ --report-file=sopcinfo:H:/DSD_DE0/DSD/first_nios2_system.sopcinfo --report-file=html:H:/DSD_DE0/DSD/first_nios2_system.html --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=H:/DSD_DE0/DSD/first_nios2_system.qsys
+Progress: Loading DSD/first_nios2_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 12.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 12.0]
+Progress: Parameterizing module onchip_mem
+Progress: Adding cpu [altera_nios2_qsys 12.0]
+Progress: Parameterizing module cpu
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 12.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sys_clk_timer [altera_avalon_timer 12.0]
+Progress: Parameterizing module sys_clk_timer
+Progress: Adding sysid [altera_avalon_sysid_qsys 12.0]
+Progress: Parameterizing module sysid
+Progress: Adding led_pio [altera_avalon_pio 12.0]
+Progress: Parameterizing module led_pio
+Progress: Adding sdram_0 [altera_avalon_new_sdram_controller 12.0]
+Progress: Parameterizing module sdram_0
+Progress: Adding altpll_0 [altpll 12.0]
+Progress: Parameterizing module altpll_0
+Progress: Adding fp_cust_insn_0 [fp_cust_insn 1.0]
+Progress: Parameterizing module fp_cust_insn_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: first_nios2_system.sysid: System ID will no longer be automatically assigned.
+Info: first_nios2_system.sysid: Time stamp will be automatically updated when this component is generated.
+Warning: first_nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: first_nios2_system.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Loading component library for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (1) searching C:/altera/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:/altera/quartus/sopc_builder/bin/root_components.ipx
+Info: C:/altera/quartus/sopc_builder/bin/root_components.ipx: Loading now from components.ipx
+Info: Reading index C:/altera/quartus/sopc_builder/bin/ip_component_categories.ipx
+Info: C:/altera/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0.02 seconds
+Info: C:/altera/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.02 seconds
+Info: Reading index C:/altera/ip/altera/altera_components.ipx
+Info: C:/altera/ip/altera/altera_components.ipx described 585 plugins, 0 paths, in 0.43 seconds
+Progress: Loading component/sls_avalon_udsc_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Progress: Loading component/sls_avalon_usb20hc_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Progress: Loading component/sls_avalon_usb20hr_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Progress: Loading component/sls_avalon_usb20sr_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Progress: Loading component/sls_avalon_udsc_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Progress: Loading component/sls_avalon_usb20sr_hw.tcl
+Info: no _hw.tcl package requested, assuming package require -exact sopc 9.0
+Info: C:/altera/ip/**/* matched 1201 files in 0.76 seconds
+Info: H:/.altera.quartus/ip/12.0/**/* matched 0 files in 0.00 seconds
+Info: H:/DSD_DE0/DSD/first_nios2_system/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system.ipx
+Progress: Loading DSD/first_nios2_system.qsys
+Progress: Loading DSD/fp_cust_insn_hw.tcl
+Info: H:/DSD_DE0/DSD/* matched 58 files in 0.12 seconds
+Info: H:/DSD_DE0/DSD/ip/**/* matched 0 files in 0.00 seconds
+Info: H:/DSD_DE0/DSD/*/* matched 475 files in 0.64 seconds
+Info: H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system.ipx described 0 plugins, 3 paths, in 0.77 seconds
+Progress: Loading testbench/first_nios2_system_tb.qsys
+Info: H:/DSD_DE0/DSD/first_nios2_system/testbench/* matched 8 files in 0.81 seconds
+Info: H:/DSD_DE0/DSD/first_nios2_system/testbench/*/* matched 9 files in 0.03 seconds
+Info: Reading index C:/altera/quartus/sopc_builder/builtin.ipx
+Info: C:/altera/quartus/sopc_builder/builtin.ipx described 95 plugins, 0 paths, in 0.06 seconds
+Info: C:/altera/quartus/sopc_builder/**/* matched 9 files in 0.07 seconds
+Info: Reading index C:/altera/quartus/common/librarian/factories/index.ipx
+Info: C:/altera/quartus/common/librarian/factories/index.ipx described 150 plugins, 0 paths, in 0.12 seconds
+Info: C:/altera/quartus/common/librarian/factories/**/* matched 4 files in 0.12 seconds
+Info: C:/altera/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
+Info: C:/altera/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 9 paths, in 1.82 seconds
+Info: C:/altera/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 1.82 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Loading presets
+Progress: Loading presets
+Debug: Script: C:/altera/quartus/sopc_builder/bin/tbgen.tcl
+Info: Running script C:/altera/quartus/sopc_builder/bin/tbgen.tcl
+Info: sopc::set_package_version 11.1
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in_reset
+Info: get_interface_property led_pio_external_connection EXPORT_OF
+Info: get_instance_property led_pio CLASS_NAME
+Info: get_instance_assignment led_pio testbench.partner.map.external_connection
+Info: get_interface_property sdram_0_wire EXPORT_OF
+Info: get_instance_property sdram_0 CLASS_NAME
+Info: get_instance_assignment sdram_0 testbench.partner.map.wire
+Info: get_interface_property sdram_external_clk EXPORT_OF
+Info: get_instance_property altpll_0 CLASS_NAME
+Info: get_instance_assignment altpll_0 testbench.partner.map.c0
+Info: send_message Info TB_Gen: System design is: first_nios2_system
+Info: TB_Gen: System design is: first_nios2_system
+Info: send_message Info TB_Gen: Creating testbench system : first_nios2_system_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : first_nios2_system_tb with all standard BFMs
+Info: create_system first_nios2_system_tb QSYS
+Info: add_instance first_nios2_system_inst first_nios2_system 
+Info: set_use_testbench_naming_pattern true
+Info: get_instance_interfaces first_nios2_system_inst
+Info: get_instance_interface_property first_nios2_system_inst clk CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst reset CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst led_pio_external_connection CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst sdram_0_wire CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst sdram_external_clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property first_nios2_system_inst clk CLASS_NAME
+Info: add_instance first_nios2_system_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property first_nios2_system_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter first_nios2_system_inst clk clockRate
+Info: set_instance_parameter_value first_nios2_system_inst_clk_bfm CLOCK_RATE 50.0
+Info: get_instance_interface_property first_nios2_system_inst clk CLASS_NAME
+Info: get_instance_interfaces first_nios2_system_inst_clk_bfm
+Info: get_instance_interface_property first_nios2_system_inst_clk_bfm clk CLASS_NAME
+Info: add_connection first_nios2_system_inst_clk_bfm.clk first_nios2_system_inst.clk
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property first_nios2_system_inst reset CLASS_NAME
+Info: add_instance first_nios2_system_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property first_nios2_system_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports first_nios2_system_inst reset
+Info: get_instance_interface_port_property first_nios2_system_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value first_nios2_system_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value first_nios2_system_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property first_nios2_system_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces first_nios2_system_inst_reset_bfm
+Info: get_instance_interface_property first_nios2_system_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_parameter first_nios2_system_inst reset associatedClock
+Info: get_instance_interfaces first_nios2_system_inst_clk_bfm
+Info: get_instance_interface_property first_nios2_system_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: first_nios2_system_inst_reset_bfm is not associated to any clock
+Warning: TB_Gen: first_nios2_system_inst_reset_bfm is not associated to any clock
+Info: send_message Warning TB_Gen: Connecting first_nios2_system_inst_reset_bfm to 'first_nios2_system_inst_clk_bfm.clk'
+Warning: TB_Gen: Connecting first_nios2_system_inst_reset_bfm to 'first_nios2_system_inst_clk_bfm.clk'
+Info: add_connection first_nios2_system_inst_clk_bfm.clk first_nios2_system_inst_reset_bfm.clk
+Info: get_instance_interface_property first_nios2_system_inst reset CLASS_NAME
+Info: get_instance_interfaces first_nios2_system_inst_reset_bfm
+Info: get_instance_interface_property first_nios2_system_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_interface_property first_nios2_system_inst_reset_bfm clk CLASS_NAME
+Info: add_connection first_nios2_system_inst_reset_bfm.reset first_nios2_system_inst.reset
+Info: send_message Info TB_Gen: conduit found: led_pio_external_connection
+Info: TB_Gen: conduit found: led_pio_external_connection
+Info: get_instance_interface_property first_nios2_system_inst led_pio_external_connection CLASS_NAME
+Info: add_instance first_nios2_system_inst_led_pio_external_connection_bfm altera_conduit_bfm 
+Info: get_instance_property first_nios2_system_inst_led_pio_external_connection_bfm CLASS_NAME
+Info: get_instance_interface_ports first_nios2_system_inst led_pio_external_connection
+Info: get_instance_interface_port_property first_nios2_system_inst led_pio_external_connection led_pio_external_connection_export ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst led_pio_external_connection led_pio_external_connection_export WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst led_pio_external_connection led_pio_external_connection_export DIRECTION
+Info: set_instance_parameter_value first_nios2_system_inst_led_pio_external_connection_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value first_nios2_system_inst_led_pio_external_connection_bfm SIGNAL_WIDTHS 10
+Info: set_instance_parameter_value first_nios2_system_inst_led_pio_external_connection_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_interface_property first_nios2_system_inst led_pio_external_connection CLASS_NAME
+Info: get_instance_interfaces first_nios2_system_inst_led_pio_external_connection_bfm
+Info: get_instance_interface_property first_nios2_system_inst_led_pio_external_connection_bfm conduit CLASS_NAME
+Info: add_connection first_nios2_system_inst_led_pio_external_connection_bfm.conduit first_nios2_system_inst.led_pio_external_connection
+Info: send_message Info TB_Gen: conduit_end found: sdram_0_wire
+Info: TB_Gen: conduit_end found: sdram_0_wire
+Info: get_instance_interface_property first_nios2_system_inst sdram_0_wire CLASS_NAME
+Info: add_instance first_nios2_system_inst_sdram_0_wire_bfm altera_conduit_bfm 
+Info: get_instance_property first_nios2_system_inst_sdram_0_wire_bfm CLASS_NAME
+Info: get_instance_interface_ports first_nios2_system_inst sdram_0_wire
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_addr ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_addr WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_addr DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ba ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ba WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ba DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cas_n ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cas_n WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cas_n DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cke ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cke WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cke DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cs_n ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cs_n WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_cs_n DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dq ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dq WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dq DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dqm ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dqm WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_dqm DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ras_n ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ras_n WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_ras_n DIRECTION
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_we_n ROLE
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_we_n WIDTH
+Info: get_instance_interface_port_property first_nios2_system_inst sdram_0_wire sdram_0_wire_we_n DIRECTION
+Info: set_instance_parameter_value first_nios2_system_inst_sdram_0_wire_bfm SIGNAL_ROLES addr ba cas_n cke cs_n dq dqm ras_n we_n
+Info: set_instance_parameter_value first_nios2_system_inst_sdram_0_wire_bfm SIGNAL_WIDTHS 12 2 1 1 1 16 2 1 1
+Info: set_instance_parameter_value first_nios2_system_inst_sdram_0_wire_bfm SIGNAL_DIRECTIONS input input input input input bidir input input input
+Info: get_instance_interface_property first_nios2_system_inst sdram_0_wire CLASS_NAME
+Info: get_instance_interfaces first_nios2_system_inst_sdram_0_wire_bfm
+Info: get_instance_interface_property first_nios2_system_inst_sdram_0_wire_bfm conduit CLASS_NAME
+Info: add_connection first_nios2_system_inst_sdram_0_wire_bfm.conduit first_nios2_system_inst.sdram_0_wire
+Info: send_message Info TB_Gen: Saving testbench system : first_nios2_system_tb.qsys
+Info: TB_Gen: Saving testbench system : first_nios2_system_tb.qsys
+Info: save_system first_nios2_system_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb.qsys
+Info: Done
+Info: ip-generate --project-directory=H:/DSD_DE0/DSD/first_nios2_system/testbench/ --output-directory=H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/ --file-set=SIM_VERILOG --report-file=html:H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb.html --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb.qsys --report-file=csv:H:/DSD_DE0/DSD/first_nios2_system_tb.csv --report-file=spd:H:/DSD_DE0/DSD/first_nios2_system_tb.spd
+Progress: Loading testbench/first_nios2_system_tb.qsys
+Progress: Reading input file
+Progress: Adding first_nios2_system_inst [first_nios2_system 1.0]
+Progress: Parameterizing module first_nios2_system_inst
+Progress: Adding first_nios2_system_inst_clk_bfm [altera_avalon_clock_source 12.0]
+Progress: Parameterizing module first_nios2_system_inst_clk_bfm
+Progress: Adding first_nios2_system_inst_reset_bfm [altera_avalon_reset_source 12.0]
+Progress: Parameterizing module first_nios2_system_inst_reset_bfm
+Progress: Adding first_nios2_system_inst_led_pio_external_connection_bfm [altera_conduit_bfm 12.0]
+Progress: Parameterizing module first_nios2_system_inst_led_pio_external_connection_bfm
+Progress: Adding first_nios2_system_inst_sdram_0_wire_bfm [altera_conduit_bfm 12.0]
+Progress: Parameterizing module first_nios2_system_inst_sdram_0_wire_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: first_nios2_system_tb.first_nios2_system_inst.sysid: System ID will no longer be automatically assigned.
+Info: first_nios2_system_tb.first_nios2_system_inst.sysid: Time stamp will be automatically updated when this component is generated.
+Warning: first_nios2_system_tb.first_nios2_system_inst.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: first_nios2_system_tb.first_nios2_system_inst.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system_tb.first_nios2_system_inst.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system_tb.first_nios2_system_inst.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: first_nios2_system_tb.first_nios2_system_inst_clk_bfm: Elaborate: altera_clock_source
+Info: first_nios2_system_tb.first_nios2_system_inst_clk_bfm:            $Revision: #1 $
+Info: first_nios2_system_tb.first_nios2_system_inst_clk_bfm:            $Date: 2012/02/13 $
+Info: first_nios2_system_tb.first_nios2_system_inst_reset_bfm: Elaborate: altera_reset_source
+Info: first_nios2_system_tb.first_nios2_system_inst_reset_bfm:            $Revision: #1 $
+Info: first_nios2_system_tb.first_nios2_system_inst_reset_bfm:            $Date: 2012/02/13 $
+Info: first_nios2_system_tb.first_nios2_system_inst_reset_bfm: Reset is negatively asserted.
+Info: first_nios2_system_tb: Generating first_nios2_system_tb "first_nios2_system_tb" for SIM_VERILOG
+Info: pipeline_bridge_swap_transform: After transform: 5 modules, 5 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: pipeline_bridge_swap_transform: After transform: 9 modules, 25 connections
+Info: merlin_custom_instruction_transform: After transform: 12 modules, 28 connections
+Info: merlin_translator_transform: After transform: 20 modules, 52 connections
+Info: merlin_domain_transform: After transform: 35 modules, 130 connections
+Info: merlin_router_transform: After transform: 43 modules, 154 connections
+Info: merlin_traffic_limiter_transform: After transform: 44 modules, 158 connections
+Info: merlin_burst_transform: After transform: 45 modules, 161 connections
+Info: reset_adaptation_transform: After transform: 46 modules, 163 connections
+Info: merlin_network_to_switch_transform: After transform: 61 modules, 195 connections
+Info: merlin_width_transform: After transform: 63 modules, 201 connections
+Info: limiter_update_transform: After transform: 63 modules, 202 connections
+Info: merlin_interrupt_mapper_transform: After transform: 64 modules, 205 connections
+Warning: system: "No matching role found for cpu_custom_instruction_master_translator:ci_slave:ci_slave_result (result)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
+Info: first_nios2_system_inst: "first_nios2_system_tb" instantiated first_nios2_system "first_nios2_system_inst"
+Info: first_nios2_system_inst_clk_bfm: "first_nios2_system_tb" instantiated altera_avalon_clock_source "first_nios2_system_inst_clk_bfm"
+Info: first_nios2_system_inst_reset_bfm: "first_nios2_system_tb" instantiated altera_avalon_reset_source "first_nios2_system_inst_reset_bfm"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+Info: first_nios2_system_inst_led_pio_external_connection_bfm: "first_nios2_system_tb" instantiated altera_conduit_bfm "first_nios2_system_inst_led_pio_external_connection_bfm"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+Info: first_nios2_system_inst_sdram_0_wire_bfm: "first_nios2_system_tb" instantiated altera_conduit_bfm "first_nios2_system_inst_sdram_0_wire_bfm"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/verbosity_pkg.sv
+Info: cpu: Starting RTL generation for module 'first_nios2_system_cpu'
+Info: cpu:   Generation command is [exec C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I C:/altera/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=first_nios2_system_cpu --dir=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0465_cpu_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0465_cpu_gen//first_nios2_system_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0465_cpu_gen/    --bogus  ]
+Info: cpu: # 2013.02.23 19:46:24 (*) Starting Nios II generation
+Info: cpu: # 2013.02.23 19:46:24 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2013.02.23 19:46:25 (*)   Couldn't query license setup in Quartus directory C:/altera/quartus
+Info: cpu: # 2013.02.23 19:46:25 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2013.02.23 19:46:25 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2013.02.23 19:46:25 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2013.02.23 19:46:25 (*)   Creating all objects for CPU
+Info: cpu: # 2013.02.23 19:46:26 (*)     Pipeline frontend
+Info: cpu: # 2013.02.23 19:46:28 (*)   Creating 'C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0465_cpu_gen//first_nios2_system_cpu.do'
+Info: cpu: # 2013.02.23 19:46:28 (*)   Generating RTL from CPU objects
+Info: cpu: # 2013.02.23 19:46:30 (*)   Creating encrypted RTL
+Info: cpu: # 2013.02.23 19:46:31 (*)   Creating IP functional simulation model
+Info: cpu: # 2013.02.23 19:46:38 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'first_nios2_system_cpu'
+Info: cpu: "first_nios2_system_inst" instantiated altera_nios2_qsys "cpu"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0466_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0466_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0466_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0466_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0466_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:46:48 (*) Success: sopc_builder finished.
+Info: jtag_uart: "first_nios2_system_inst" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0467_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0467_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0467_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0467_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0467_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:46:59 (*) Success: sopc_builder finished.
+Info: sys_clk_timer: "first_nios2_system_inst" instantiated altera_avalon_timer "sys_clk_timer"
+Info: sysid: Generating Verilog simulation model
+Info: sysid: Generated simulation model first_nios2_system_sysid.vo
+Info: sysid: "first_nios2_system_inst" instantiated altera_avalon_sysid_qsys "sysid"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0471_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0471_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0471_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0471_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0471_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:47:11 (*) Success: sopc_builder finished.
+Info: led_pio: "first_nios2_system_inst" instantiated altera_avalon_pio "led_pio"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0472_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0472_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0472_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0472_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0472_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+.
+# 2013.02.23 19:47:21 (*) Running Test Generator Program for first_nios2_system_sdram_0
+# 2013.02.23 19:47:22 (*) Success: sopc_builder finished.
+Info: sdram_0: "first_nios2_system_inst" instantiated altera_avalon_new_sdram_controller "sdram_0"
+Info: altpll_0: Generating Verilog simulation model
+Info: altpll_0: Generated simulation model first_nios2_system_altpll_0.vo
+Info: altpll_0: "first_nios2_system_inst" instantiated altpll "altpll_0"
+Info: fp_cust_insn_0: "first_nios2_system_inst" instantiated fp_cust_insn "fp_cust_insn_0"
+Info: cpu_custom_instruction_master_translator: "first_nios2_system_inst" instantiated altera_customins_master_translator "cpu_custom_instruction_master_translator"
+Info: cpu_custom_instruction_master_multi_xconnect: "first_nios2_system_inst" instantiated altera_customins_xconnect "cpu_custom_instruction_master_multi_xconnect"
+Info: cpu_custom_instruction_master_multi_slave_translator0: "first_nios2_system_inst" instantiated altera_customins_slave_translator "cpu_custom_instruction_master_multi_slave_translator0"
+Info: cpu_instruction_master_translator: "first_nios2_system_inst" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info: cpu_jtag_debug_module_translator: "first_nios2_system_inst" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info: cpu_instruction_master_translator_avalon_universal_master_0_agent: "first_nios2_system_inst" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "first_nios2_system_inst" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "first_nios2_system_inst" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "first_nios2_system_inst" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "first_nios2_system_inst" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "first_nios2_system_inst" instantiated altera_merlin_router "id_router"
+Info: id_router_001: "first_nios2_system_inst" instantiated altera_merlin_router "id_router_001"
+Info: id_router_002: "first_nios2_system_inst" instantiated altera_merlin_router "id_router_002"
+Info: limiter: "first_nios2_system_inst" instantiated altera_merlin_traffic_limiter "limiter"
+Info: burst_adapter: "first_nios2_system_inst" instantiated altera_merlin_burst_adapter "burst_adapter"
+Info: rst_controller: "first_nios2_system_inst" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "first_nios2_system_inst" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "first_nios2_system_inst" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "first_nios2_system_inst" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "first_nios2_system_inst" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_002: "first_nios2_system_inst" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_002"
+Info: rsp_xbar_mux: "first_nios2_system_inst" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "first_nios2_system_inst" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: width_adapter: "first_nios2_system_inst" instantiated altera_merlin_width_adapter "width_adapter"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+Info: irq_mapper: "first_nios2_system_inst" instantiated altera_irq_mapper "irq_mapper"
+Info: first_nios2_system_tb: Done first_nios2_system_tb" with 39 modules, 100 files, 1814405 bytes
+Info: ip-generate succeeded.
+Info: sim-script-gen --spd=H:/DSD_DE0/DSD/first_nios2_system_tb.spd --output-directory=H:/DSD_DE0/DSD/first_nios2_system/testbench/
+Info: Doing: ip-make-simscript --spd=H:/DSD_DE0/DSD/first_nios2_system_tb.spd --output-directory=H:/DSD_DE0/DSD/first_nios2_system/testbench/
+Info: Generating the following file(s) for MODELSIM simulator in H:/DSD_DE0/DSD/first_nios2_system/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in H:/DSD_DE0/DSD/first_nios2_system/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in H:/DSD_DE0/DSD/first_nios2_system/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in H:/DSD_DE0/DSD/first_nios2_system/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	38 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERAPRO simulator in H:/DSD_DE0/DSD/first_nios2_system/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create testbench Qsys system
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=H:/DSD_DE0/DSD/ --output-directory=H:/DSD_DE0/DSD/first_nios2_system/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:H:/DSD_DE0/DSD/first_nios2_system.sopcinfo --report-file=html:H:/DSD_DE0/DSD/first_nios2_system.html --report-file=qip:H:/DSD_DE0/DSD/first_nios2_system/synthesis/first_nios2_system.qip --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP2C70F896C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=H:/DSD_DE0/DSD/first_nios2_system.qsys
+Progress: Loading DSD/first_nios2_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 12.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 12.0]
+Progress: Parameterizing module onchip_mem
+Progress: Adding cpu [altera_nios2_qsys 12.0]
+Progress: Parameterizing module cpu
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 12.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sys_clk_timer [altera_avalon_timer 12.0]
+Progress: Parameterizing module sys_clk_timer
+Progress: Adding sysid [altera_avalon_sysid_qsys 12.0]
+Progress: Parameterizing module sysid
+Progress: Adding led_pio [altera_avalon_pio 12.0]
+Progress: Parameterizing module led_pio
+Progress: Adding sdram_0 [altera_avalon_new_sdram_controller 12.0]
+Progress: Parameterizing module sdram_0
+Progress: Adding altpll_0 [altpll 12.0]
+Progress: Parameterizing module altpll_0
+Progress: Adding fp_cust_insn_0 [fp_cust_insn 1.0]
+Progress: Parameterizing module fp_cust_insn_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: first_nios2_system.sysid: System ID will no longer be automatically assigned.
+Info: first_nios2_system.sysid: Time stamp will be automatically updated when this component is generated.
+Warning: first_nios2_system.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: first_nios2_system.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: first_nios2_system.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: first_nios2_system: Generating first_nios2_system "first_nios2_system" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 9 modules, 25 connections
+Info: merlin_custom_instruction_transform: After transform: 12 modules, 28 connections
+Info: merlin_translator_transform: After transform: 20 modules, 52 connections
+Info: merlin_domain_transform: After transform: 35 modules, 130 connections
+Info: merlin_router_transform: After transform: 43 modules, 154 connections
+Info: merlin_traffic_limiter_transform: After transform: 44 modules, 158 connections
+Info: merlin_burst_transform: After transform: 45 modules, 161 connections
+Info: reset_adaptation_transform: After transform: 46 modules, 163 connections
+Info: merlin_network_to_switch_transform: After transform: 61 modules, 195 connections
+Info: merlin_width_transform: After transform: 63 modules, 201 connections
+Info: limiter_update_transform: After transform: 63 modules, 202 connections
+Info: merlin_interrupt_mapper_transform: After transform: 64 modules, 205 connections
+Warning: system: "No matching role found for cpu_custom_instruction_master_translator:ci_slave:ci_slave_result (result)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: system: "No matching role found for cpu_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
+Info: cpu: Starting RTL generation for module 'first_nios2_system_cpu'
+Info: cpu:   Generation command is [exec C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I C:/altera/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=first_nios2_system_cpu --dir=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0497_cpu_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0497_cpu_gen//first_nios2_system_cpu_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info: cpu: # 2013.02.23 19:47:33 (*) Starting Nios II generation
+Info: cpu: # 2013.02.23 19:47:33 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2013.02.23 19:47:34 (*)   Couldn't query license setup in Quartus directory C:/altera/quartus
+Info: cpu: # 2013.02.23 19:47:34 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2013.02.23 19:47:34 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2013.02.23 19:47:34 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2013.02.23 19:47:34 (*)   Creating all objects for CPU
+Info: cpu: # 2013.02.23 19:47:35 (*)     Pipeline frontend
+Info: cpu: # 2013.02.23 19:47:37 (*)   Generating RTL from CPU objects
+Info: cpu: # 2013.02.23 19:47:39 (*)   Creating encrypted RTL
+Info: cpu: # 2013.02.23 19:47:40 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'first_nios2_system_cpu'
+Info: cpu: "first_nios2_system" instantiated altera_nios2_qsys "cpu"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0498_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0498_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0498_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0498_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0498_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:47:49 (*) Success: sopc_builder finished.
+Info: jtag_uart: "first_nios2_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0499_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0499_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0499_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0499_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0499_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:47:59 (*) Success: sopc_builder finished.
+Info: sys_clk_timer: "first_nios2_system" instantiated altera_avalon_timer "sys_clk_timer"
+Info: sysid: "first_nios2_system" instantiated altera_avalon_sysid_qsys "sysid"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0501_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0501_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0501_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0501_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0501_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2013.02.23 19:48:10 (*) Success: sopc_builder finished.
+Info: led_pio: "first_nios2_system" instantiated altera_avalon_pio "led_pio"
+Info: Starting classic module elaboration.
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0502_sopclgen  --no_splash --refresh C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0502_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0502_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+"c:/altera/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0502_sopclgen  --generate C:/Users/rs5010/AppData/Local/Temp/alt5759_1927424665665378005.dir/0502_sopclgen/yysystem.v --quartus_dir="c:/altera/quartus" --sopc_perl="c:/altera/quartus/bin/perl" --sopc_lib_path="++c:/altera/quartus/../ip/altera/sopc_builder_ip+c:/altera/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+.
+# 2013.02.23 19:48:20 (*) Running Test Generator Program for first_nios2_system_sdram_0
+# 2013.02.23 19:48:21 (*) Success: sopc_builder finished.
+Info: sdram_0: "first_nios2_system" instantiated altera_avalon_new_sdram_controller "sdram_0"
+Info: altpll_0: "first_nios2_system" instantiated altpll "altpll_0"
+Info: fp_cust_insn_0: "first_nios2_system" instantiated fp_cust_insn "fp_cust_insn_0"
+Info: cpu_custom_instruction_master_translator: "first_nios2_system" instantiated altera_customins_master_translator "cpu_custom_instruction_master_translator"
+Info: cpu_custom_instruction_master_multi_xconnect: "first_nios2_system" instantiated altera_customins_xconnect "cpu_custom_instruction_master_multi_xconnect"
+Info: cpu_custom_instruction_master_multi_slave_translator0: "first_nios2_system" instantiated altera_customins_slave_translator "cpu_custom_instruction_master_multi_slave_translator0"
+Info: cpu_instruction_master_translator: "first_nios2_system" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info: cpu_jtag_debug_module_translator: "first_nios2_system" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info: cpu_instruction_master_translator_avalon_universal_master_0_agent: "first_nios2_system" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "first_nios2_system" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "first_nios2_system" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "first_nios2_system" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "first_nios2_system" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "first_nios2_system" instantiated altera_merlin_router "id_router"
+Info: id_router_001: "first_nios2_system" instantiated altera_merlin_router "id_router_001"
+Info: id_router_002: "first_nios2_system" instantiated altera_merlin_router "id_router_002"
+Info: limiter: "first_nios2_system" instantiated altera_merlin_traffic_limiter "limiter"
+Info: burst_adapter: "first_nios2_system" instantiated altera_merlin_burst_adapter "burst_adapter"
+Info: rst_controller: "first_nios2_system" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "first_nios2_system" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "first_nios2_system" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "first_nios2_system" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "first_nios2_system" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_002: "first_nios2_system" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_002"
+Info: rsp_xbar_mux: "first_nios2_system" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "first_nios2_system" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: width_adapter: "first_nios2_system" instantiated altera_merlin_width_adapter "width_adapter"
+Info: Reusing file H:/DSD_DE0/DSD/first_nios2_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: irq_mapper: "first_nios2_system" instantiated altera_irq_mapper "irq_mapper"
+Info: first_nios2_system: Done first_nios2_system" with 34 modules, 86 files, 1667880 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
