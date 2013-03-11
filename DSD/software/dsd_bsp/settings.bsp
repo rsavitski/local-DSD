@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>11-Mar-2013 15:51:05</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1363017065634</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 11, 2013 4:39:48 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1363019988239</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\local_dsd\fp_cust_simple\DSD\software\dsd_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\local_dsd\fp_cust_simple\DSD\first_nios2_system.sopcinfo</SopcDesignFile>

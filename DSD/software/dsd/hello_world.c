@@ -32,15 +32,51 @@ float **tempmat;
 
 int alt_main()
 {
+	//int hack = 0x7fffffff; //NaN
+	int hack2 = 0x7f800000; //+inf
+	int hack = 0xff800000; //-inf
 	float a = 2.5;
 	float b = 1.9;
+	//float* bptr = &b;
+	int j;
+
 	float c = 0;
-	c = FP_ADD_CI(a,b);
 
-	c = FP_SUB_CI(a,b);
+   union typepun_u
+   {
+	  int i;
+	  float f;
+   };
 
-	c = FP_MUL_CI(a,b);
+   union typepun_u typepun = {.i = hack};
+   union typepun_u typepun2 = {.i = hack2};
 
+   typepun2.f = 1;
+
+	//bptr = (float*)(void*)&hack;
+
+	for (j = 0; ; ++j)
+	{
+		if (j%2)
+		{
+			c = FP_ADD_CI(typepun2.f,typepun.f);
+
+			c = FP_SUB_CI(typepun2.f,typepun.f);
+
+			c = FP_MUL_CI(typepun2.f,typepun.f);
+		}
+		else
+		{
+			c = FP_ADD_CI(a,b);
+
+			c = FP_SUB_CI(a,b);
+
+			c = FP_MUL_CI(a,b);
+		}
+
+		a++;
+		b++;
+	}
 	return 0;
 }
 /*

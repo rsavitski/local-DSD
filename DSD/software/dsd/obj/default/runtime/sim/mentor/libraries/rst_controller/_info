@@ -18,7 +18,7 @@ Z4 o-work rst_controller -O0
 !i10b 1
 !s100 `T=A9VB8B=YoG73fjTIF42
 !s85 0
-!s108 1363018347.885000
+!s108 1363020687.650000
 !s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|
 !s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !s101 -O0
@@ -36,7 +36,7 @@ R3
 r1
 !s85 0
 31
-!s108 1363018347.935000
+!s108 1363020687.712000
 !s107 C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|
 !s90 -reportprogress|300|C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
 !s101 -O0
