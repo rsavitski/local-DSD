@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: C:/local_dsd/fp_cust_simple/DSD/first_nios2_system.sopcinfo
  *
- * Generated: Mon Mar 11 15:50:02 GMT 2013
+ * Generated: Tue Mar 19 16:19:49 GMT 2013
  */
 
 /*
@@ -139,6 +139,7 @@
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_QSYS
+#define __DETERMINANT
 #define __FP_CUST_INSN
 
 
@@ -176,6 +177,20 @@
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "first_nios2_system"
+
+
+/*
+ * determinant_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_determinant_0 determinant
+#define DETERMINANT_0_BASE 0x0
+#define DETERMINANT_0_IRQ 20
+#define DETERMINANT_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define DETERMINANT_0_NAME "/dev/determinant_0"
+#define DETERMINANT_0_SPAN 8
+#define DETERMINANT_0_TYPE "determinant"
 
 
 /*
@@ -259,7 +274,7 @@
 #define SDRAM_0_SDRAM_NUM_CHIPSELECTS 1
 #define SDRAM_0_SDRAM_ROW_WIDTH 12
 #define SDRAM_0_SHARED_DATA 0
-#define SDRAM_0_SIM_MODEL_BASE 1
+#define SDRAM_0_SIM_MODEL_BASE 0
 #define SDRAM_0_SPAN 8388608
 #define SDRAM_0_STARVATION_INDICATOR 0
 #define SDRAM_0_TRISTATE_BRIDGE_SLAVE ""
@@ -310,7 +325,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1363016929
+#define SYSID_TIMESTAMP 1363709590
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

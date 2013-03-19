@@ -1,4 +1,17 @@
 
+State Machine - |hello_world|first_nios2_system:u0|determinant:determinant_0|fsm_state
+Name fsm_state.doolittle_done_state fsm_state.doolittle_singular_state fsm_state.calc_diagonal_state fsm_state.pipeline_state fsm_state.dummy_cycle fsm_state.preload_rowcol_state fsm_state.rotation_state fsm_state.iteration_setup_state fsm_state.algo_setup_state fsm_state.idle_state 
+fsm_state.idle_state 0 0 0 0 0 0 0 0 0 0 
+fsm_state.algo_setup_state 0 0 0 0 0 0 0 0 1 1 
+fsm_state.iteration_setup_state 0 0 0 0 0 0 0 1 0 1 
+fsm_state.rotation_state 0 0 0 0 0 0 1 0 0 1 
+fsm_state.preload_rowcol_state 0 0 0 0 0 1 0 0 0 1 
+fsm_state.dummy_cycle 0 0 0 0 1 0 0 0 0 1 
+fsm_state.pipeline_state 0 0 0 1 0 0 0 0 0 1 
+fsm_state.calc_diagonal_state 0 0 1 0 0 0 0 0 0 1 
+fsm_state.doolittle_singular_state 0 1 0 0 0 0 0 0 0 1 
+fsm_state.doolittle_done_state 1 0 0 0 0 0 0 0 0 1 
+
 State Machine - |hello_world|first_nios2_system:u0|first_nios2_system_sdram_0:sdram_0|m_next
 Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
 m_next.000000001 0 0 0 0 

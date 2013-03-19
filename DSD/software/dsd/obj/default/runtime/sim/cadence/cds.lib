@@ -13,9 +13,11 @@ DEFINE irq_mapper                                                               
 DEFINE width_adapter                                                            ./libraries/width_adapter/                                                           
 DEFINE rsp_xbar_mux_001                                                         ./libraries/rsp_xbar_mux_001/                                                        
 DEFINE rsp_xbar_mux                                                             ./libraries/rsp_xbar_mux/                                                            
-DEFINE rsp_xbar_demux_002                                                       ./libraries/rsp_xbar_demux_002/                                                      
+DEFINE rsp_xbar_demux_001                                                       ./libraries/rsp_xbar_demux_001/                                                      
 DEFINE rsp_xbar_demux                                                           ./libraries/rsp_xbar_demux/                                                          
+DEFINE cmd_xbar_mux_001                                                         ./libraries/cmd_xbar_mux_001/                                                        
 DEFINE cmd_xbar_mux                                                             ./libraries/cmd_xbar_mux/                                                            
+DEFINE cmd_xbar_demux_002                                                       ./libraries/cmd_xbar_demux_002/                                                      
 DEFINE cmd_xbar_demux_001                                                       ./libraries/cmd_xbar_demux_001/                                                      
 DEFINE cmd_xbar_demux                                                           ./libraries/cmd_xbar_demux/                                                          
 DEFINE rst_controller                                                           ./libraries/rst_controller/                                                          
@@ -24,6 +26,7 @@ DEFINE limiter                                                                  
 DEFINE id_router_002                                                            ./libraries/id_router_002/                                                           
 DEFINE id_router_001                                                            ./libraries/id_router_001/                                                           
 DEFINE id_router                                                                ./libraries/id_router/                                                               
+DEFINE addr_router_002                                                          ./libraries/addr_router_002/                                                         
 DEFINE addr_router_001                                                          ./libraries/addr_router_001/                                                         
 DEFINE addr_router                                                              ./libraries/addr_router/                                                             
 DEFINE cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
@@ -34,6 +37,7 @@ DEFINE cpu_instruction_master_translator                                        
 DEFINE cpu_custom_instruction_master_multi_slave_translator0                    ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
 DEFINE cpu_custom_instruction_master_multi_xconnect                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
 DEFINE cpu_custom_instruction_master_translator                                 ./libraries/cpu_custom_instruction_master_translator/                                
+DEFINE determinant_0                                                            ./libraries/determinant_0/                                                           
 DEFINE fp_cust_insn_0                                                           ./libraries/fp_cust_insn_0/                                                          
 DEFINE sdram_0                                                                  ./libraries/sdram_0/                                                                 
 DEFINE led_pio                                                                  ./libraries/led_pio/                                                                 

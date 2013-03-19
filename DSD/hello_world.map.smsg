@@ -1,1 +1,4 @@
-Warning (10268): Verilog HDL information at fp_cust_insn.v(52): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at determinant.v(330): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at determinant.v(701): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at determinant.v(1075): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at determinant.v(39): object "mxsize" differs only in case from object "MXSIZE" in the same scope

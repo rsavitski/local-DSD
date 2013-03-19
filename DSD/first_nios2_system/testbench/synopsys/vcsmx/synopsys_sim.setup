@@ -6,9 +6,11 @@ irq_mapper:                                                               ./libr
 width_adapter:                                                            ./libraries/width_adapter/                                                           
 rsp_xbar_mux_001:                                                         ./libraries/rsp_xbar_mux_001/                                                        
 rsp_xbar_mux:                                                             ./libraries/rsp_xbar_mux/                                                            
-rsp_xbar_demux_002:                                                       ./libraries/rsp_xbar_demux_002/                                                      
+rsp_xbar_demux_001:                                                       ./libraries/rsp_xbar_demux_001/                                                      
 rsp_xbar_demux:                                                           ./libraries/rsp_xbar_demux/                                                          
+cmd_xbar_mux_001:                                                         ./libraries/cmd_xbar_mux_001/                                                        
 cmd_xbar_mux:                                                             ./libraries/cmd_xbar_mux/                                                            
+cmd_xbar_demux_002:                                                       ./libraries/cmd_xbar_demux_002/                                                      
 cmd_xbar_demux_001:                                                       ./libraries/cmd_xbar_demux_001/                                                      
 cmd_xbar_demux:                                                           ./libraries/cmd_xbar_demux/                                                          
 rst_controller:                                                           ./libraries/rst_controller/                                                          
@@ -17,6 +19,7 @@ limiter:                                                                  ./libr
 id_router_002:                                                            ./libraries/id_router_002/                                                           
 id_router_001:                                                            ./libraries/id_router_001/                                                           
 id_router:                                                                ./libraries/id_router/                                                               
+addr_router_002:                                                          ./libraries/addr_router_002/                                                         
 addr_router_001:                                                          ./libraries/addr_router_001/                                                         
 addr_router:                                                              ./libraries/addr_router/                                                             
 cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
@@ -27,6 +30,7 @@ cpu_instruction_master_translator:                                        ./libr
 cpu_custom_instruction_master_multi_slave_translator0:                    ./libraries/cpu_custom_instruction_master_multi_slave_translator0/                   
 cpu_custom_instruction_master_multi_xconnect:                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
 cpu_custom_instruction_master_translator:                                 ./libraries/cpu_custom_instruction_master_translator/                                
+determinant_0:                                                            ./libraries/determinant_0/                                                           
 fp_cust_insn_0:                                                           ./libraries/fp_cust_insn_0/                                                          
 sdram_0:                                                                  ./libraries/sdram_0/                                                                 
 led_pio:                                                                  ./libraries/led_pio/                                                                 

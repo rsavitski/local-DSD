@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.03.11.15:48:49
+# ACDS 12.1 177 win32 2013.03.11.21:39:50
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -49,9 +49,11 @@ mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/width_adapter/
 mkdir -p ./libraries/rsp_xbar_mux_001/
 mkdir -p ./libraries/rsp_xbar_mux/
-mkdir -p ./libraries/rsp_xbar_demux_002/
+mkdir -p ./libraries/rsp_xbar_demux_001/
 mkdir -p ./libraries/rsp_xbar_demux/
+mkdir -p ./libraries/cmd_xbar_mux_001/
 mkdir -p ./libraries/cmd_xbar_mux/
+mkdir -p ./libraries/cmd_xbar_demux_002/
 mkdir -p ./libraries/cmd_xbar_demux_001/
 mkdir -p ./libraries/cmd_xbar_demux/
 mkdir -p ./libraries/rst_controller/
@@ -60,6 +62,7 @@ mkdir -p ./libraries/limiter/
 mkdir -p ./libraries/id_router_002/
 mkdir -p ./libraries/id_router_001/
 mkdir -p ./libraries/id_router/
+mkdir -p ./libraries/addr_router_002/
 mkdir -p ./libraries/addr_router_001/
 mkdir -p ./libraries/addr_router/
 mkdir -p ./libraries/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
@@ -70,6 +73,7 @@ mkdir -p ./libraries/cpu_instruction_master_translator/
 mkdir -p ./libraries/cpu_custom_instruction_master_multi_slave_translator0/
 mkdir -p ./libraries/cpu_custom_instruction_master_multi_xconnect/
 mkdir -p ./libraries/cpu_custom_instruction_master_translator/
+mkdir -p ./libraries/determinant_0/
 mkdir -p ./libraries/fp_cust_insn_0/
 mkdir -p ./libraries/sdram_0/
 mkdir -p ./libraries/led_pio/
@@ -128,10 +132,13 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv"                             -work rsp_xbar_mux_001                                                         -cdslib ./cds_libs/rsp_xbar_mux_001.cds.lib                                                        
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux                                                             -cdslib ./cds_libs/rsp_xbar_mux.cds.lib                                                            
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv"                                 -work rsp_xbar_mux                                                             -cdslib ./cds_libs/rsp_xbar_mux.cds.lib                                                            
-  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv"                           -work rsp_xbar_demux_002                                                       -cdslib ./cds_libs/rsp_xbar_demux_002.cds.lib                                                      
+  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv"                           -work rsp_xbar_demux_001                                                       -cdslib ./cds_libs/rsp_xbar_demux_001.cds.lib                                                      
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv"                               -work rsp_xbar_demux                                                           -cdslib ./cds_libs/rsp_xbar_demux.cds.lib                                                          
+  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux_001                                                         -cdslib ./cds_libs/cmd_xbar_mux_001.cds.lib                                                        
+  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv"                             -work cmd_xbar_mux_001                                                         -cdslib ./cds_libs/cmd_xbar_mux_001.cds.lib                                                        
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux                                                             -cdslib ./cds_libs/cmd_xbar_mux.cds.lib                                                            
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv"                                 -work cmd_xbar_mux                                                             -cdslib ./cds_libs/cmd_xbar_mux.cds.lib                                                            
+  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv"                           -work cmd_xbar_demux_002                                                       -cdslib ./cds_libs/cmd_xbar_demux_002.cds.lib                                                      
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv"                           -work cmd_xbar_demux_001                                                       -cdslib ./cds_libs/cmd_xbar_demux_001.cds.lib                                                      
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv"                               -work cmd_xbar_demux                                                           -cdslib ./cds_libs/cmd_xbar_demux.cds.lib                                                          
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                                                           -cdslib ./cds_libs/rst_controller.cds.lib                                                          
@@ -143,6 +150,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv"                                -work id_router_002                                                            -cdslib ./cds_libs/id_router_002.cds.lib                                                           
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv"                                -work id_router_001                                                            -cdslib ./cds_libs/id_router_001.cds.lib                                                           
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv"                                    -work id_router                                                                -cdslib ./cds_libs/id_router.cds.lib                                                               
+  ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_002.sv"                              -work addr_router_002                                                          -cdslib ./cds_libs/addr_router_002.cds.lib                                                         
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_001.sv"                              -work addr_router_001                                                          -cdslib ./cds_libs/addr_router_001.cds.lib                                                         
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router.sv"                                  -work addr_router                                                              -cdslib ./cds_libs/addr_router.cds.lib                                                             
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -cdslib ./cds_libs/cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib
@@ -154,6 +162,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv"                               -work cpu_custom_instruction_master_multi_slave_translator0                    -cdslib ./cds_libs/cpu_custom_instruction_master_multi_slave_translator0.cds.lib                   
   ncvlog -sv "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv" -work cpu_custom_instruction_master_multi_xconnect                             -cdslib ./cds_libs/cpu_custom_instruction_master_multi_xconnect.cds.lib                            
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v"                               -work cpu_custom_instruction_master_translator                                 -cdslib ./cds_libs/cpu_custom_instruction_master_translator.cds.lib                                
+  ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/determinant.v"                                                      -work determinant_0                                                            -cdslib ./cds_libs/determinant_0.cds.lib                                                           
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v"                                                     -work fp_cust_insn_0                                                           -cdslib ./cds_libs/fp_cust_insn_0.cds.lib                                                          
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v"                                       -work sdram_0                                                                  -cdslib ./cds_libs/sdram_0.cds.lib                                                                 
   ncvlog     "$QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v"                        -work sdram_0                                                                  -cdslib ./cds_libs/sdram_0.cds.lib                                                                 

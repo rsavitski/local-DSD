@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.03.11.15:47:43
+# ACDS 12.1 177 win32 2013.03.11.21:38:43
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -82,12 +82,16 @@ ensure_lib                                                                      
 vmap       rsp_xbar_mux_001                                                         ./libraries/rsp_xbar_mux_001/                                                        
 ensure_lib                                                                          ./libraries/rsp_xbar_mux/                                                            
 vmap       rsp_xbar_mux                                                             ./libraries/rsp_xbar_mux/                                                            
-ensure_lib                                                                          ./libraries/rsp_xbar_demux_002/                                                      
-vmap       rsp_xbar_demux_002                                                       ./libraries/rsp_xbar_demux_002/                                                      
+ensure_lib                                                                          ./libraries/rsp_xbar_demux_001/                                                      
+vmap       rsp_xbar_demux_001                                                       ./libraries/rsp_xbar_demux_001/                                                      
 ensure_lib                                                                          ./libraries/rsp_xbar_demux/                                                          
 vmap       rsp_xbar_demux                                                           ./libraries/rsp_xbar_demux/                                                          
+ensure_lib                                                                          ./libraries/cmd_xbar_mux_001/                                                        
+vmap       cmd_xbar_mux_001                                                         ./libraries/cmd_xbar_mux_001/                                                        
 ensure_lib                                                                          ./libraries/cmd_xbar_mux/                                                            
 vmap       cmd_xbar_mux                                                             ./libraries/cmd_xbar_mux/                                                            
+ensure_lib                                                                          ./libraries/cmd_xbar_demux_002/                                                      
+vmap       cmd_xbar_demux_002                                                       ./libraries/cmd_xbar_demux_002/                                                      
 ensure_lib                                                                          ./libraries/cmd_xbar_demux_001/                                                      
 vmap       cmd_xbar_demux_001                                                       ./libraries/cmd_xbar_demux_001/                                                      
 ensure_lib                                                                          ./libraries/cmd_xbar_demux/                                                          
@@ -104,6 +108,8 @@ ensure_lib                                                                      
 vmap       id_router_001                                                            ./libraries/id_router_001/                                                           
 ensure_lib                                                                          ./libraries/id_router/                                                               
 vmap       id_router                                                                ./libraries/id_router/                                                               
+ensure_lib                                                                          ./libraries/addr_router_002/                                                         
+vmap       addr_router_002                                                          ./libraries/addr_router_002/                                                         
 ensure_lib                                                                          ./libraries/addr_router_001/                                                         
 vmap       addr_router_001                                                          ./libraries/addr_router_001/                                                         
 ensure_lib                                                                          ./libraries/addr_router/                                                             
@@ -124,6 +130,8 @@ ensure_lib                                                                      
 vmap       cpu_custom_instruction_master_multi_xconnect                             ./libraries/cpu_custom_instruction_master_multi_xconnect/                            
 ensure_lib                                                                          ./libraries/cpu_custom_instruction_master_translator/                                
 vmap       cpu_custom_instruction_master_translator                                 ./libraries/cpu_custom_instruction_master_translator/                                
+ensure_lib                                                                          ./libraries/determinant_0/                                                           
+vmap       determinant_0                                                            ./libraries/determinant_0/                                                           
 ensure_lib                                                                          ./libraries/fp_cust_insn_0/                                                          
 vmap       fp_cust_insn_0                                                           ./libraries/fp_cust_insn_0/                                                          
 ensure_lib                                                                          ./libraries/sdram_0/                                                                 
@@ -165,10 +173,13 @@ alias com {
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux_001.sv"                             -work rsp_xbar_mux_001                                                        
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_xbar_mux                                                            
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_mux.sv"                                 -work rsp_xbar_mux                                                            
-  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_002.sv"                           -work rsp_xbar_demux_002                                                      
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux_001.sv"                           -work rsp_xbar_demux_001                                                      
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_rsp_xbar_demux.sv"                               -work rsp_xbar_demux                                                          
+  vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux_001                                                        
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux_001.sv"                             -work cmd_xbar_mux_001                                                        
   vlog -sv "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_xbar_mux                                                            
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_mux.sv"                                 -work cmd_xbar_mux                                                            
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_002.sv"                           -work cmd_xbar_demux_002                                                      
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux_001.sv"                           -work cmd_xbar_demux_001                                                      
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cmd_xbar_demux.sv"                               -work cmd_xbar_demux                                                          
   vlog     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                                                          
@@ -180,6 +191,7 @@ alias com {
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_002.sv"                                -work id_router_002                                                           
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router_001.sv"                                -work id_router_001                                                           
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_id_router.sv"                                    -work id_router                                                               
+  vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_002.sv"                              -work addr_router_002                                                         
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router_001.sv"                              -work addr_router_001                                                         
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_addr_router.sv"                                  -work addr_router                                                             
   vlog     "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                            -work cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
@@ -191,6 +203,7 @@ alias com {
   vlog -sv "$QSYS_SIMDIR/submodules/altera_customins_slave_translator.sv"                               -work cpu_custom_instruction_master_multi_slave_translator0                   
   vlog -sv "$QSYS_SIMDIR/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv" -work cpu_custom_instruction_master_multi_xconnect                            
   vlog     "$QSYS_SIMDIR/submodules/altera_customins_master_translator.v"                               -work cpu_custom_instruction_master_translator                                
+  vlog     "$QSYS_SIMDIR/submodules/determinant.v"                                                      -work determinant_0                                                           
   vlog     "$QSYS_SIMDIR/submodules/fp_cust_insn.v"                                                     -work fp_cust_insn_0                                                          
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0.v"                                       -work sdram_0                                                                 
   vlog     "$QSYS_SIMDIR/submodules/first_nios2_system_sdram_0_test_component.v"                        -work sdram_0                                                                 
@@ -212,14 +225,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_002 -L rsp_xbar_demux -L cmd_xbar_mux -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L fp_cust_insn_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L rsp_xbar_demux -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L fp_cust_insn_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_002 -L rsp_xbar_demux -L cmd_xbar_mux -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L fp_cust_insn_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
+  vsim -novopt -t ps -L work -L work_lib -L irq_mapper -L width_adapter -L rsp_xbar_mux_001 -L rsp_xbar_mux -L rsp_xbar_demux_001 -L rsp_xbar_demux -L cmd_xbar_mux_001 -L cmd_xbar_mux -L cmd_xbar_demux_002 -L cmd_xbar_demux_001 -L cmd_xbar_demux -L rst_controller -L burst_adapter -L limiter -L id_router_002 -L id_router_001 -L id_router -L addr_router_002 -L addr_router_001 -L addr_router -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo -L cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent -L cpu_instruction_master_translator_avalon_universal_master_0_agent -L cpu_jtag_debug_module_translator -L cpu_instruction_master_translator -L cpu_custom_instruction_master_multi_slave_translator0 -L cpu_custom_instruction_master_multi_xconnect -L cpu_custom_instruction_master_translator -L determinant_0 -L fp_cust_insn_0 -L sdram_0 -L led_pio -L sysid -L sys_clk_timer -L jtag_uart -L cpu -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

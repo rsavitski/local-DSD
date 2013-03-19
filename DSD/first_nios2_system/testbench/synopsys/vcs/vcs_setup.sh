@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.03.11.15:48:47
+# ACDS 12.1 177 win32 2013.03.11.21:39:49
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -70,9 +70,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv \
-  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v \
@@ -83,6 +85,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_002.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_001.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v \
@@ -93,6 +96,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v \
+  $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/determinant.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v \
   $QSYS_SIMDIR/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v \

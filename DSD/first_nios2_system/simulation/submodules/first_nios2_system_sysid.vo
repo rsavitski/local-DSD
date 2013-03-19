@@ -41,7 +41,7 @@ module  first_nios2_system_sysid
 
 
 	assign
-		readdata = {1'b0, address, 1'b0, address, {3{1'b0}}, address, {2{1'b0}}, {4{address}}, 1'b0, {7{address}}, {3{1'b0}}, {3{address}}, {2{1'b0}}, {2{address}}};
+		readdata = {1'b0, address, 1'b0, address, {3{1'b0}}, address, {2{1'b0}}, {5{address}}, {2{1'b0}}, address, {2{1'b0}}, {3{address}}, 1'b0, address, 1'b0, {2{address}}, 1'b0, {3{address}}};
 endmodule //first_nios2_system_sysid
 //synopsys translate_on
 //VALID FILE

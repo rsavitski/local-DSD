@@ -152,7 +152,7 @@ ACDS_VERSION := 12.1
 # BUILD_NUMBER: 177
 
 # Optimize for simulation
-SIM_OPTIMIZE ?= 1
+SIM_OPTIMIZE ?= 0
 
 # The CPU reset address as needed by elf2flash
 RESET_ADDRESS ?= 0x04000000
@@ -164,7 +164,6 @@ RESET_ADDRESS ?= 0x04000000
 # Memory: sdram_0
 MEM_0 := sdram_0
 $(MEM_0)_NAME := sdram_0
-$(MEM_0)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_0).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym

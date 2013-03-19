@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 12.1 177 win32 2013.03.11.15:51:26
+# ACDS 12.1 177 win32 2013.03.11.21:57:02
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -71,9 +71,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_mux.sv \
-  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_002.sv \
+  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_rsp_xbar_demux.sv \
+  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_mux.sv \
+  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_002.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cmd_xbar_demux.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_reset_controller.v \
@@ -84,6 +86,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_002.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_id_router.sv \
+  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_002.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router_001.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_addr_router.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_avalon_sc_fifo.v \
@@ -94,6 +97,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_slave_translator.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_cpu_custom_instruction_master_multi_xconnect.sv \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/altera_customins_master_translator.v \
+  C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/determinant.v \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/fp_cust_insn.v \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0.v \
   C:/local_dsd/fp_cust_simple/DSD/first_nios2_system/testbench/first_nios2_system_tb/simulation/submodules/first_nios2_system_sdram_0_test_component.v \

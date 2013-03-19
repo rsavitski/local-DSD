@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 12.0 Build 178 05/31/2012 SJ Full Version */
+/* Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Ign)
-		Device PartName(EP3C16F484) MfrSpec(OpMask(0) FullPath("H:/DSD_DE0/DSD/hello_world.sof"));
+	P ActionCode(Cfg)
+		Device PartName(EP3C16F484) Path("C:/local_dsd/fp_cust_simple/DSD/") File("hello_world_time_limited.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
