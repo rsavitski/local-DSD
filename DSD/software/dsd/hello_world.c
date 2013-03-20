@@ -44,8 +44,8 @@ int main()
 	{0.5424,0.44677,0.2895,0.60307,0.74166,0.43487,0.3415,0.1511,0.14937,0.86048,0.64611,0.5424,0.25846,0.11046,0.7991,0.33769,0.12377,0.32556,0.64334,0.60232},
 	{0.0043823,0.92164,0.67087,0.46813,0.27879,0.39418,0.85128,0.5525,0.060255,0.40671,0.44802,0.2647,0.72126,0.47147,0.6816,0.16555,0.46643,0.37819,0.096348,0.21239}};
 
-	//float threemat[3][3] = {{2,3,5}, {4,10,13}, {6,21,30}};  // usual det, 48.0
-	float threemat[3][3] = {{2,3,5}, {4,6,13}, {6,21,30}}; // with rotations, det -72.0
+	float threemat[3][3] = {{2,3,5}, {4,10,13}, {6,21,30}};  // usual det, 48.0
+	//float threemat[3][3] = {{2,3,5}, {4,6,13}, {6,21,30}}; // with rotations, det -72.0
 	//float threemat[3][3] = {{2,3,5}, {4,6,13}, {6,9,2}};   // singular test
 
 	alt_irq_init(NULL);
@@ -85,7 +85,6 @@ int main()
 	// 1k iterations for 32x32 matrix with irq and memcpy latencies
 	///////////////////////////////////////////////////////////////////
 	printf("\n-------------------------\n");
-	printf("32x32 matrix done in:");
 
 	clock_t exec_t1, exec_t2;
 	char buf[10];
@@ -98,9 +97,11 @@ int main()
 	}
 
 	exec_t2 = times(NULL); // get system time after finishing the process
-	gcvt(((double)exec_t2-(double)exec_t1) / alt_ticks_per_second(), 10, buf);
-	alt_putstr(" "); alt_putstr(buf); alt_putstr(" ms\n");
 
+	printf("32x32 matrix done in: %.3f ms\n", ((double)exec_t2-(double)exec_t1) / alt_ticks_per_second());
+
+	printf("calculated result: %.3f\n", lastresult.f);
+	printf("expected result: %.3f\n", testmat32_known_result);
 
 	while(1);
 

@@ -366,9 +366,9 @@ always @(posedge clk) begin
 			begin
 				alpha_dead_read_cycle <= ~alpha_dead_read_cycle;
 
-				if (alpha_dead_read_cycle == 0) begin
+				if (alpha_dead_read_cycle == 0) begin 
 					// if alpha nonzero, proceed to next state and save it in the reg
-					if (mxram_data_out_a != 0) begin
+					if (mxram_data_out_a[30:0] != 0) begin // taking 31 bits as -0 is a thing
 
 						fsm_state <= preload_rowcol_state;
 						alpha_value <= mxram_data_out_a;
@@ -469,7 +469,7 @@ always @(posedge clk) begin
 	else if (dmul_done_next_cycle)
 		result <= {p_sign ^ diag_mul_out[31],diag_mul_out[30:0]};
 	else if (fsm_state == doolittle_singular_state)
-		result <= -1;
+		result <= 0; // singular
 
 end
 
