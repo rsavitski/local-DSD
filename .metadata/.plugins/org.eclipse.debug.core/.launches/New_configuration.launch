@@ -5,7 +5,7 @@
 <stringAttribute key="byteStreamDeviceCableName" value="USB-Blaster on localhost [USB-0]"/>
 <stringAttribute key="byteStreamDeviceDeviceID" value="1"/>
 <stringAttribute key="byteStreamDeviceInstanceID" value="0"/>
-<stringAttribute key="com.altera.sbtgui.launch.REMOTE_PORT" value="50027"/>
+<stringAttribute key="com.altera.sbtgui.launch.REMOTE_PORT" value="49894"/>
 <booleanAttribute key="disableNios2ConsoleView" value="false"/>
 <booleanAttribute key="downloadProgram" value="true"/>
 <stringAttribute key="elfFile" value="C:\local_dsd\fp_cust_simple\DSD\software\dsd\dsd.elf"/>

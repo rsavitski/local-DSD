@@ -52,27 +52,15 @@ module determinant #(
 	reg dma_done = 0;
 	reg dma_done_next_cycle = 0;
 
-/*
-	matrixram	matrixram_inst (
-	.address_a ( dma_matrix_addr ),
-	.address_b ( 0 ),
-	.clock ( clk ),
-	.data_a ( dma_matrix_data ),
-	.data_b ( 0 ),
-	.wren_a ( dma_matrix_we ),
-	.wren_b ( 0 ),
-	.q_a (  ),
-	.q_b (  )
-	);*/
-
-	//========================================================================================
+// fsm code below, avalon interface + dma at the end
+//========================================================================================
 
 localparam DIV_LATENCY = 14;
 localparam MUL_LATENCY = 5;
 localparam SUB_LATENCY = 8;
 
 ////////////////////////////////////////////////////
-//glue
+// glue hack, to be removed
 reg [5:0] MXSIZE;
 
 always @(*)
@@ -81,7 +69,7 @@ begin
 end
 
 ////////////////////////////////////////////////////
-reg [5:0] current_mxsize; //TODO: 32x32 hardcode
+reg [5:0] current_mxsize;
 reg [5:0] current_mxsize_r;
 
 reg update_current_mxsize;
@@ -91,39 +79,34 @@ reg [31:0] alpha_value;
 reg [31:0] left_col [0:30]; //preloaded column of things to divide //TODO: hardcoded for 32x32 max // [0:MAX_MX_SIZE-2] since N-1 at top iteration
 reg [31:0] top_row [0:30]; // preloaded top row with N-1 valid elements (size N-1) //TODO: hardcoded for 32x32 max
 
-
 reg reset_pipe;
 
 reg div_enable;
 reg get_next_coefficient;
 
-
 reg pipe_done_at_edge;
-
-
 reg dmul_done_next_cycle;
 
 ////////////////////////////////////////////////////
+
 reg [31:0] mul_input_2; // top row coefficients go here
 
-reg [31:0] coefficient_dividend; // TODO: DIVIDEND
+reg [31:0] coefficient_dividend; 
 
-
-wire [31:0] mxram_data_out_a;
-wire [31:0] mxram_data_out_b;
-////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
 reg [31:0] diag_mul_in1;
 reg [31:0] diag_mul_in2;
 wire [31:0] diag_mul_out;
-////////////////////////////////////////////////////
+
+wire [31:0] mxram_data_out_a;
+wire [31:0] mxram_data_out_b;
+
 ////////////////////////////////////////////////////
 
 wire [31:0] div_out;
 wire [31:0] mul_out;
 wire [31:0] sub_out;
-
 
 reg [31:0] div_in1;
 reg [31:0] div_in2;
@@ -133,43 +116,7 @@ reg [31:0] sub_in1;
 reg [31:0] sub_in2;
 
 
-
 integer i;
-/*
-//reg [31:0] div_dummy [0:DIV_LATENCY-1];
-//reg [31:0] mul_dummy [0:MUL_LATENCY-1];
-reg [31:0] sub_dummy [0:SUB_LATENCY-1];
-
-always @(posedge clk) begin
-
-	if (!reset) begin
-
-	//if (div_enable) begin
-	//	for (i=0; i<DIV_LATENCY; i = i+1) begin
-	//		div_dummy[i+1] <= div_dummy[i];
-	//	end
-	//	div_dummy[0] <= div_in1 / div_in2;
-	//end
-
-
-	//for (i=0; i<MUL_LATENCY; i = i+1) begin
-	//	mul_dummy[i+1] <= mul_dummy[i];
-	//end
-	//mul_dummy[0] <= mul_in1 * mul_in2;
-
-	for (i=0; i<SUB_LATENCY; i = i+1) begin
-		sub_dummy[i+1] <= sub_dummy[i];
-	end
-	sub_dummy[0] <= sub_in1-sub_in2;
-
-	end
-
-end*/
-
-//assign div_out = div_dummy[DIV_LATENCY-1];
-//assign mul_out = mul_dummy[MUL_LATENCY-1];
-//assign sub_out = sub_dummy[SUB_LATENCY-1];
-
 
 always @(*)
 begin
@@ -184,8 +131,6 @@ begin
 end
 
 ////////////////////////////////////////////////////
-////////////////////////////////////////////////////
-
 
 fp_div1	fp_div1_inst (
 	.clk_en ( div_enable ),
@@ -209,9 +154,6 @@ fp_sub1	fp_sub1_inst (
 	.result ( sub_out )
 	);
 
-
-
-////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
 localparam idle_state = 0;
@@ -224,12 +166,8 @@ localparam pipeline_state = 6;
 localparam calc_diagonal_state = 7;
 localparam doolittle_singular_state = 8;
 localparam doolittle_done_state = 9;
-localparam TODO_DONE = 10;
-localparam TODO_DEAD = 11;
 
 reg [3:0] fsm_state;
-
-
 
 ////////////////////////////////////////////////////
 
@@ -243,8 +181,8 @@ reg [9:0] writemx_addr;
 
 reg [9:0] diag_addr;
 
-
 reg writemx_wen;
+
 ////////////////////////////////////////////////////
 
 reg [9:0] mxram_addr_a;
@@ -255,8 +193,6 @@ reg [31:0] mxram_data_in_b;
 
 reg mxram_wen_a;
 reg mxram_wen_b;
-
-
 
 matrixram	matrixram_inst (
 	.address_a ( mxram_addr_a ),
@@ -289,7 +225,7 @@ always @(*) begin
 		mxram_wen_a <= dma_matrix_we;
 
 	end
-	else begin //TODO: case state etc
+	else begin // doolittle owns ram
 
 		if (fsm_state == iteration_setup_state || fsm_state == rotation_state) begin
 			mxram_addr_a <= rot_alpha_addr;
@@ -306,7 +242,7 @@ always @(*) begin
 			mxram_addr_b <= writemx_addr;
 
 			mxram_data_in_b <= sub_out;
-			mxram_wen_b <= writemx_wen; //SEVERE, better to derive a signal
+			mxram_wen_b <= writemx_wen; 
 
 		end
 		else if (fsm_state == calc_diagonal_state) begin
@@ -321,12 +257,14 @@ end
 
 ////////////////////////////////////////////////////
 
-reg [9:0] rowptr [0:31]; //TODO: hardcoded for 32x32
+reg [9:0] rowptr [0:31]; 
 reg rotate;
 reg reset_rowptr;
 
 integer v;
 
+
+// row pointer rotated shiftreg, treated as mem pointers to beginning of lines. Since rows always aligned at 32 word boundaries, contents are always const
 always @(posedge clk) begin
 
 	if (reset || reset_rowptr) begin
@@ -356,19 +294,16 @@ end
 
 ////////////////////////////////////////////////////
 reg det_instr_pending;
-
 reg alpha_dead_read_cycle;
 
-reg [4:0] rot_cnt; //TODO: hardcoded for 32x32
+reg [4:0] rot_cnt; 
 reg [5:0] rc_cnt; //needs extra bit
 
 reg nop_rc_done;
-
 reg p_sign;
-
 reg det_done_pulse;
 
-// master registered process of doing everything
+// fsm block
 always @(posedge clk) begin
 
 	reset_rowptr <= 0;
@@ -419,7 +354,7 @@ always @(posedge clk) begin
 				rc_cnt <= 0;
 				nop_rc_done <= 0;
 
-				if (current_mxsize == 1) begin //TODO: SEVERE: termination goes here, check C block for correct const
+				if (current_mxsize == 1) begin 
 					fsm_state <= calc_diagonal_state;
 				end
 				else begin
@@ -431,9 +366,9 @@ always @(posedge clk) begin
 			begin
 				alpha_dead_read_cycle <= ~alpha_dead_read_cycle;
 
-				if (alpha_dead_read_cycle == 0) begin
+				if (alpha_dead_read_cycle == 0) begin 
 					// if alpha nonzero, proceed to next state and save it in the reg
-					if (mxram_data_out_a != 0) begin
+					if (mxram_data_out_a[30:0] != 0) begin // taking 31 bits as -0 is a thing
 
 						fsm_state <= preload_rowcol_state;
 						alpha_value <= mxram_data_out_a;
@@ -475,7 +410,7 @@ always @(posedge clk) begin
 				end
 			end
 
-			dummy_cycle: //hack hack hack :|
+			dummy_cycle: // timing cycle hack to get last piece of data into ram
 			begin
 				fsm_state <= pipeline_state;
 			end
@@ -511,15 +446,12 @@ always @(posedge clk) begin
 			default:;
 
 		endcase
-
 	end
-
 end
 
 
 ////////////////////////////////////////////////////
 // interfacing
-
 
 always @(posedge clk) begin
 	if (start_dma_pulse)
@@ -528,18 +460,18 @@ always @(posedge clk) begin
 		det_instr_pending <= 0;
 end
 
+////////////////////////////////////////////////////
+// result
 
-///////////////////////////////////////
 always @(posedge clk) begin
 	if (reset)
 		result <= 0;
 	else if (dmul_done_next_cycle)
 		result <= {p_sign ^ diag_mul_out[31],diag_mul_out[30:0]};
 	else if (fsm_state == doolittle_singular_state)
-		result <= -1;
+		result <= 0; // singular
 
 end
-//////////////////////////////////////
 
 //////////////////////////////////////////////////////////////
 always @(*) begin
@@ -595,6 +527,8 @@ end
 
 
 /////////////////////////////////////////////////////////////
+// rotations
+
 always @(*) begin
 	rotate <= 0;
 
@@ -607,6 +541,7 @@ end
 
 /////////////////////////////////////////////////////////////
 // preload state address setup
+
 always @(*) begin
 
 	preload_row_addr <= rowptr[MXSIZE-current_mxsize] + MXSIZE-current_mxsize+rc_cnt+1;
@@ -616,6 +551,7 @@ end
 
 /////////////////////////////////////////////////////////////
 // processing pipe's reset
+
 always @(*) begin
 
 	reset_pipe <= 1;
@@ -625,22 +561,17 @@ always @(*) begin
 		reset_pipe <= 0;
 
 	end
-
 end
-
-
 
 ////////////////////////////////////////////////////
 
-
 reg div_saturated;
 
-reg [4:0] div_cnt; //TODO: hardcoded for 32x32 max
-reg [5:0] div_sat_cnt; //TODO: hardcoded for 32x32 max
+reg [4:0] div_cnt; 
+reg [5:0] div_sat_cnt; 
 
 
 // coefficient normalisation (div stage)
-
 always @(posedge clk) begin
 
 	if (reset_pipe || reset) begin
@@ -656,10 +587,6 @@ always @(posedge clk) begin
 
 			div_cnt <= div_cnt + 1;
 
-			//if (div_cnt == MXSIZE-1) begin //specific wraparound point doesn't matter as the latter stages will consume only the valid coefficients, only N-1 values are actually used
-			//	div_cnt <= 0;
-			//end
-
 			// push value into division block
 			coefficient_dividend <= left_col[div_cnt+1];
 
@@ -671,9 +598,7 @@ always @(posedge clk) begin
 
 				div_sat_cnt <= DIV_LATENCY-1; // doesn't matter what happens to it after here, can increment forever
 			end
-
 		end
-
 	end
 end
 
@@ -687,10 +612,7 @@ always @(*) begin
 	end
 end
 
-//========================================================================================
-
-
-
+////////////////////////////////////////////////////
 
 reg [4:0] mul_cnt;
 reg [5:0] mul_sat_cnt;
@@ -741,19 +663,16 @@ always @(*) begin
 end
 
 
+////////////////////////////////////////////////////
 
-
-//========================================================================================
-
-reg [4:0] i_read; //TODO: hardcoded for 32x32
-reg [4:0] j_read; //TODO: hardcoded for 32x32
+reg [4:0] i_read; 
+reg [4:0] j_read; 
 
 reg sub_saturated;
 reg [4:0] sub_sat_cnt;
 
 
 // third block, substractor
-
 always @(posedge clk) begin
 
 	if (reset || reset_pipe) begin
@@ -780,14 +699,9 @@ always @(posedge clk) begin
 		end
 
 
-		//SEVERE: off by 1 and blocking
-
-
 		 if (i_read == MXSIZE-1 && j_read == MXSIZE-1) begin
 		 	j_read <= MXSIZE-current_mxsize+1; // doesn't matter
 		 end
-
-
 
 
 		sub_sat_cnt <= sub_sat_cnt +1;
@@ -797,8 +711,6 @@ always @(posedge clk) begin
 			sub_sat_cnt <= SUB_LATENCY-1;
 		end
 	end
-
-
 end
 
 
@@ -806,15 +718,13 @@ always @(*) begin
 	readmx_addr <= rowptr[j_read] + i_read;
 end
 
-//========================================================================================
+////////////////////////////////////////////////////
 
-reg mx_iterate_done; //TODO: transition out of state is together with mx_terate_done (combinatorially), last write happening on the egde mx_iterate_done toggles
-reg [4:0] i_write; //TODO: hardcoded for 32x32
-reg [4:0] j_write; //TODO: hardcoded for 32x32
-
+reg mx_iterate_done; 
+reg [4:0] i_write; 
+reg [4:0] j_write; 
 
 // write to mem block
-
 always @(posedge clk) begin
 
 	if (reset || reset_pipe) begin
@@ -838,15 +748,11 @@ always @(posedge clk) begin
 		end
 
 
-
 		 if (i_write == MXSIZE-1 && j_write == MXSIZE-1) begin
 		 	mx_iterate_done <= 1;//sub sweep done
 		 	j_write <= MXSIZE-current_mxsize+1; // doesn't matter
 		 end
-
 	end
-
-
 end
 
 
@@ -876,8 +782,6 @@ end
 
 //////////////////////////////////////////////
 
-
-
 reg [31:0] diag_mul_out_reg;
 
 reg [5:0] diag_index;
@@ -885,27 +789,8 @@ reg [4:0] diag_mul_delay_cnt;
 
 reg diag_init_cycle_done;
 
-/////////////////////////////////////////////
-
 reg [31:0] dmul_in1;
 reg [31:0] dmul_in2;
-/*
-reg [31:0] dmul_dummy [0:MUL_LATENCY-1];
-
-always @(posedge clk) begin
-
-	if (!reset) begin
-
-		for (i=0; i<MUL_LATENCY; i = i+1) begin
-			dmul_dummy[i+1] <= dmul_dummy[i];
-		end
-		dmul_dummy[0] <= dmul_in1 * dmul_in2;
-	end
-
-end
-
-assign diag_mul_out = dmul_dummy[MUL_LATENCY-1];*/
-
 
 always @(*)
 begin
@@ -924,9 +809,7 @@ fp_mul1	fp_mul1_inst_2 (
 	.result ( diag_mul_out )
 	);
 
-
 /////////////////////////////////////////////////////
-
 
 always @(posedge clk) begin
 
@@ -1008,8 +891,8 @@ end
 
 ////////////////////////////////////////////////////
 
-	//========================================================================================
-
+// avalon interface + dma
+//========================================================================================
 
 	always @(posedge clk) begin : cpuinterface_reg
 

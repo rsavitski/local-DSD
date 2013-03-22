@@ -60,15 +60,6 @@ localparam MUL_LATENCY = 5;
 localparam SUB_LATENCY = 8;
 
 ////////////////////////////////////////////////////
-// glue hack, to be removed
-reg [5:0] MXSIZE;
-
-always @(*)
-begin
-	MXSIZE <= mxsize;
-end
-
-////////////////////////////////////////////////////
 reg [5:0] current_mxsize;
 reg [5:0] current_mxsize_r;
 
@@ -278,10 +269,10 @@ always @(posedge clk) begin
 
 		if (rotate) begin
 
-			rowptr[MXSIZE-current_mxsize] <= rowptr[MXSIZE-1];
+			rowptr[mxsize-current_mxsize] <= rowptr[mxsize-1];
 
 			for (v=1; v<32; v=v+1) begin
-				if ((v >= MXSIZE-current_mxsize+1) && (v < MXSIZE)) begin
+				if ((v >= mxsize-current_mxsize+1) && (v < mxsize)) begin
 
 					rowptr[v] <= rowptr[v-1];
 
@@ -476,7 +467,7 @@ end
 //////////////////////////////////////////////////////////////
 always @(*) begin
 
-	rot_alpha_addr <= rowptr[MXSIZE-current_mxsize] + MXSIZE-current_mxsize;
+	rot_alpha_addr <= rowptr[mxsize-current_mxsize] + mxsize-current_mxsize;
 
 end
 
@@ -511,7 +502,7 @@ always @(*) begin
 		algo_setup_state:
 		begin
 			update_current_mxsize <= 1;
-			current_mxsize <= MXSIZE;
+			current_mxsize <= mxsize;
 		end
 
 		iteration_setup_state:
@@ -544,8 +535,8 @@ end
 
 always @(*) begin
 
-	preload_row_addr <= rowptr[MXSIZE-current_mxsize] + MXSIZE-current_mxsize+rc_cnt+1;
-	preload_col_addr <= rowptr[MXSIZE-current_mxsize+rc_cnt+1] + MXSIZE-current_mxsize;
+	preload_row_addr <= rowptr[mxsize-current_mxsize] + mxsize-current_mxsize+rc_cnt+1;
+	preload_col_addr <= rowptr[mxsize-current_mxsize+rc_cnt+1] + mxsize-current_mxsize;
 
 end
 
@@ -677,8 +668,8 @@ always @(posedge clk) begin
 
 	if (reset || reset_pipe) begin
 
-		i_read <= MXSIZE-current_mxsize+1; // ends at MXSIZE-1 always
-		j_read <= MXSIZE-current_mxsize+1; // ends at MXSIZE-1 always
+		i_read <= mxsize-current_mxsize+1; // ends at mxsize-1 always
+		j_read <= mxsize-current_mxsize+1; // ends at mxsize-1 always
 
 		sub_saturated <= 0;
 		sub_sat_cnt	<= 0;
@@ -693,14 +684,14 @@ always @(posedge clk) begin
 
 		j_read <= j_read;
 
-		if (i_read == MXSIZE-1) begin
-			i_read <= MXSIZE-current_mxsize+1;
+		if (i_read == mxsize-1) begin
+			i_read <= mxsize-current_mxsize+1;
 			j_read <= j_read +1 ;
 		end
 
 
-		 if (i_read == MXSIZE-1 && j_read == MXSIZE-1) begin
-		 	j_read <= MXSIZE-current_mxsize+1; // doesn't matter
+		 if (i_read == mxsize-1 && j_read == mxsize-1) begin
+		 	j_read <= mxsize-current_mxsize+1; // doesn't matter
 		 end
 
 
@@ -729,8 +720,8 @@ always @(posedge clk) begin
 
 	if (reset || reset_pipe) begin
 
-		i_write <= MXSIZE-current_mxsize+1; // ends at MXSIZE-1 always
-		j_write <= MXSIZE-current_mxsize+1; // ends at MXSIZE-1 always
+		i_write <= mxsize-current_mxsize+1; // ends at mxsize-1 always
+		j_write <= mxsize-current_mxsize+1; // ends at mxsize-1 always
 		mx_iterate_done <= 0;
 
 	end
@@ -742,15 +733,15 @@ always @(posedge clk) begin
 
 		j_write <= j_write;
 
-		if (i_write == MXSIZE-1) begin
-			i_write <= MXSIZE-current_mxsize+1;
+		if (i_write == mxsize-1) begin
+			i_write <= mxsize-current_mxsize+1;
 			j_write <= j_write +1 ;
 		end
 
 
-		 if (i_write == MXSIZE-1 && j_write == MXSIZE-1) begin
+		 if (i_write == mxsize-1 && j_write == mxsize-1) begin
 		 	mx_iterate_done <= 1;//sub sweep done
-		 	j_write <= MXSIZE-current_mxsize+1; // doesn't matter
+		 	j_write <= mxsize-current_mxsize+1; // doesn't matter
 		 end
 	end
 end
@@ -775,7 +766,7 @@ always @(*) begin
 
 	pipe_done_at_edge <= 0;
 
-	 if (i_write == MXSIZE-1 && j_write == MXSIZE-1 && sub_saturated) begin
+	 if (i_write == mxsize-1 && j_write == mxsize-1 && sub_saturated) begin
 	 	pipe_done_at_edge <= 1;
 	 end
 end
@@ -883,7 +874,7 @@ always @(*) begin
 
 	dmul_done_next_cycle <= 0;
 
-	if (diag_mul_delay_cnt == 0 && diag_index == MXSIZE) begin
+	if (diag_mul_delay_cnt == 0 && diag_index == mxsize) begin
 		dmul_done_next_cycle <= 1;
 	end
 

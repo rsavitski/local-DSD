@@ -45,8 +45,8 @@ int main()
 	{0.0043823,0.92164,0.67087,0.46813,0.27879,0.39418,0.85128,0.5525,0.060255,0.40671,0.44802,0.2647,0.72126,0.47147,0.6816,0.16555,0.46643,0.37819,0.096348,0.21239}};
 
 	float threemat[3][3] = {{2,3,5}, {4,10,13}, {6,21,30}};  // usual det, 48.0
-	//float threemat[3][3] = {{2,3,5}, {4,6,13}, {6,21,30}}; // with rotations, det -72.0
-	//float threemat[3][3] = {{2,3,5}, {4,6,13}, {6,9,2}};   // singular test
+	float threemat2[3][3] = {{2,3,5}, {4,6,13}, {6,21,30}}; // with rotations, det -72.0
+	float threemat3[3][3] = {{2,3,5}, {4,6,13}, {6,9,2}};   // singular test
 
 	alt_irq_init(NULL);
 	reg_isr();
@@ -62,6 +62,14 @@ int main()
 	while(!detdone);
 	printf("Determinant is: %f\n", lastresult.f);
 
+	det_start((float*)&threemat2, 3);
+	while(!detdone);
+
+	printf("Determinant is: %f\n", lastresult.f);
+	det_start((float*)&threemat3, 3);
+
+	while(!detdone);
+	printf("Determinant is: %f\n", lastresult.f);
 
 
 	printf("-------------------------\n");
