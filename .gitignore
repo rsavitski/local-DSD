@@ -7,7 +7,9 @@
 *.elf
 *.dat
 *.bin
+*.rpt
 .metadata/
+eclipse/
 DSD/first_nios2_system/simulation/
 DSD/first_nios2_system/testbench/
 DSD/software/dsd/obj/
@@ -15,5 +17,3 @@ DSD/software/dsd_bsp/obj/
 DSD/software/dsd_bsp/settings.bsp
 DSD/db/
 DSD/incremental_db/
-DSD/software/dsd/beeth5_noise.bin
-eclipse/
